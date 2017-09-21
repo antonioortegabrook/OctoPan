@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="ukXbsc" name="OctoPan" displaySplashScreen="1" reportAppUsage="1"
+              splashScreenColour="Dark" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="com.ortegabrook.OctoPan" includeBinaryInAppConfig="1"
+              cppLanguageStandard="11" buildVST="1" buildVST3="1" buildAU="1"
+              buildAUv3="1" buildRTAS="0" buildAAX="1" buildStandalone="0"
+              enableIAA="0" pluginName="OctoPan" pluginDesc="OctoPan" pluginManufacturer="ortegabrook"
+              pluginManufacturerCode="Manu" pluginCode="Ukxb" pluginChannelConfigs="{1, 8}"
+              pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
+              pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="OctoPanAU"
+              pluginRTASCategory="" aaxIdentifier="com.ortegabrook.OctoPan"
+              pluginAAXCategory="AAX_ePlugInCategory_Spatialization" jucerVersion="5.1.2"
+              pluginAUMainType="" pluginVSTCategory="Spatialization">
+  <MAINGROUP id="jORU6t" name="OctoPan">
+    <GROUP id="{613EBCF3-C61D-BE37-18FD-3EC69E58887A}" name="Source">
+      <GROUP id="{ACE4155D-6798-9F9B-BA72-F5ED53B04889}" name="AmplitudePanner">
+        <FILE id="zpm8aS" name="angular_panning.c" compile="1" resource="0"
+              file="Source/angular_panning/angular_panning.c"/>
+        <FILE id="y2qeSq" name="angular_panning.h" compile="0" resource="0"
+              file="Source/angular_panning/angular_panning.h"/>
+      </GROUP>
+      <GROUP id="{40EF9A7B-8A52-50CD-2CD1-48CDCF1A3B7A}" name="Res">
+        <FILE id="AFe7Gj" name="dims.h" compile="0" resource="0" file="Source/GUI/dims.h"/>
+        <FILE id="fVlpJF" name="AstColours.h" compile="0" resource="0" file="Source/GUI/AstColours.h"/>
+        <FILE id="zC46Px" name="ast_colours.h" compile="0" resource="0" file="Source/GUI/ast_colours.h"/>
+        <FILE id="tHLgo1" name="AstColours.h" compile="0" resource="0" file="../GUI-2/Source/AstColours.h"/>
+        <FILE id="rUl8uy" name="dims.h" compile="0" resource="0" file="../GUI-2/Source/dims.h"/>
+      </GROUP>
+      <GROUP id="{0F309151-CBF8-26BD-A00C-9CA7B0CEA667}" name="Components">
+        <GROUP id="{2B731EDD-0F5A-A8C7-F603-573D29DDB586}" name="TitleComponent">
+          <FILE id="lSFk2O" name="TitleComponent.cpp" compile="1" resource="0"
+                file="Source/GUI/TitleComponent.cpp"/>
+          <FILE id="WlkORs" name="TitleComponent.h" compile="0" resource="0"
+                file="Source/GUI/TitleComponent.h"/>
+        </GROUP>
+        <GROUP id="{1BE577EB-EE78-392E-90A2-9776EDBABD56}" name="SectionTitleComponent">
+          <FILE id="pbqSJE" name="SectionTitleComponent.cpp" compile="1" resource="0"
+                file="Source/GUI/SectionTitleComponent.cpp"/>
+          <FILE id="R2AsnZ" name="SectionTitleComponent.h" compile="0" resource="0"
+                file="Source/GUI/SectionTitleComponent.h"/>
+        </GROUP>
+        <GROUP id="{D96B84A1-8504-94AA-AC32-CD601B688CA4}" name="LayoutComponent">
+          <FILE id="DVurlp" name="LayoutComponent.cpp" compile="1" resource="0"
+                file="Source/GUI/LayoutComponent.cpp"/>
+          <FILE id="E1tuPf" name="LayoutComponent.h" compile="0" resource="0"
+                file="Source/GUI/LayoutComponent.h"/>
+          <FILE id="Ywj4VC" name="CheckBoxLookAndFeel.h" compile="0" resource="0"
+                file="Source/GUI/CheckBoxLookAndFeel.h"/>
+        </GROUP>
+        <GROUP id="{3FBCB7B0-3F45-8870-B936-5C17C5868E82}" name="SourceComponent">
+          <FILE id="nmezSn" name="SourceComponent.cpp" compile="1" resource="0"
+                file="Source/GUI/SourceComponent.cpp"/>
+          <FILE id="LYAJP4" name="SourceComponent.h" compile="0" resource="0"
+                file="Source/GUI/SourceComponent.h"/>
+          <FILE id="YAQwSq" name="AstSliderLookAndFeel.h" compile="0" resource="0"
+                file="Source/GUI/AstSliderLookAndFeel.h"/>
+          <FILE id="fs45Hn" name="AstSlider.cpp" compile="1" resource="0" file="Source/GUI/AstSlider.cpp"/>
+          <FILE id="sS1nXg" name="AstSlider.h" compile="0" resource="0" file="Source/GUI/AstSlider.h"/>
+          <FILE id="rlg1G9" name="AstSlider_o.h" compile="0" resource="0" file="Source/GUI/AstSlider_o.h"/>
+        </GROUP>
+        <GROUP id="{70569ED0-1637-B177-F03F-B7A703F38684}" name="PannerComponent">
+          <FILE id="xF26ZU" name="PannerComponent.cpp" compile="1" resource="0"
+                file="Source/GUI/PannerComponent.cpp"/>
+          <FILE id="I4vvy0" name="PannerComponent.h" compile="0" resource="0"
+                file="Source/GUI/PannerComponent.h"/>
+          <GROUP id="{FDCF0686-E62D-952E-F88C-BD3D10C48420}" name="PanLayoutComponent">
+            <FILE id="TiDxO1" name="PanLayoutComponent.cpp" compile="1" resource="0"
+                  file="Source/GUI/PanLayoutComponent.cpp"/>
+            <FILE id="dhjkys" name="PanLayoutComponent.h" compile="0" resource="0"
+                  file="Source/GUI/PanLayoutComponent.h"/>
+          </GROUP>
+          <GROUP id="{0EF17A48-01F9-0979-A633-3FFFE1AD0312}" name="PanDialComponent">
+            <FILE id="Xs0sCu" name="PanDialComponent.cpp" compile="1" resource="0"
+                  file="Source/GUI/PanDialComponent.cpp"/>
+            <FILE id="Z6fVwK" name="PanDialComponent.h" compile="0" resource="0"
+                  file="Source/GUI/PanDialComponent.h"/>
+            <FILE id="QR0GzC" name="PanDialLookAndFeel.h" compile="0" resource="0"
+                  file="Source/GUI/PanDialLookAndFeel.h"/>
+          </GROUP>
+        </GROUP>
+      </GROUP>
+      <FILE id="j0mGkY" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="gISkyz" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="lrlgXh" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="rgRi3E" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" vst3Folder="" aaxFolder="">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="OctoPan"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="OctoPan"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
+</JUCERPROJECT>

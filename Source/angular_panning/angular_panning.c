@@ -55,10 +55,12 @@ double quadratic_gain(double speaker_angle, double source_azimuth, double source
  */
 void normalize(double *gains_array, long array_length)
 {
+	double *gains_ptr;
 	double square_sum = 0;
 	
+	gains_ptr = gains_array;
 	for (long i = 0; i < array_length; i++)
-		square_sum += pow(gains_array[i], 2);
+		square_sum += pow(*gains_ptr++, 2);
 	
 	
 	/** Sum of squares equal to zero means all gains in the array are zero,
@@ -67,9 +69,9 @@ void normalize(double *gains_array, long array_length)
 	if (!square_sum)
 		return;
 	
-	
+	gains_ptr = gains_array;
 	for (long i = 0; i < array_length; i++)
-		gains_array[i] *= 1 / sqrt(square_sum);
+		*gains_ptr++ *= 1 / sqrt(square_sum);
 	
 	
 	return;
@@ -82,7 +84,7 @@ void normalize(double *gains_array, long array_length)
 void fill_spk_pos_array(double *array, long nspeakers, double offset)
 {
 	for (long i = 0; i < nspeakers; i ++)
-		array[i] = (i - 1 + fmod(offset, 1)) * (2 * M_PI / nspeakers);
+		*array++ = (i - 1 + fmod(offset, 1)) * (2 * M_PI / nspeakers);
 }
 
 
@@ -122,8 +124,8 @@ void init_source(t_source *source, double azimuth_degrees, double spread, double
  */
 void set_spread(t_source *source, double new_spread, double minimum_width)
 {
-        source->spread = new_spread;
-        source->width = spread_to_width(new_spread, minimum_width);
+	source->spread = new_spread;
+	source->width = spread_to_width(new_spread, minimum_width);
 }
 
 /**
@@ -131,8 +133,22 @@ void set_spread(t_source *source, double new_spread, double minimum_width)
  */
 void set_density(t_source *source, double new_density)
 {
-        source->density = new_density;
-        source->xparam = density_to_xparam(new_density);
+	source->density = new_density;
+	source->xparam = density_to_xparam(new_density);
+}
+
+/**
+ Compute gains from a t_source and a t_layout
+ */
+void compute_gains(double *gains, t_source *source, t_layout *layout)
+{
+	double *gain_ptr	= gains;
+	double *speaker_ptr	= layout->speaker_pos;
+	
+	for (long i = 0; i < layout->nspeakers; i++)
+		*gain_ptr++ = quadratic_gain(*speaker_ptr++, source->azimuth, source->width, source->xparam);
+	
+	normalize(gains, layout->nspeakers);
 }
 
 
@@ -211,9 +227,9 @@ double maximum_difference(double *arr, long len)
 {
 	double max_diff = 0;
 	double tmp_diff;
-	double arr_i;
+	
 	for (long i = 1; i < len; i++) {
-		arr_i = arr[i];
+		
 		tmp_diff = diff_angle(arr[i - 1], arr[i]);
 		
 		max_diff = tmp_diff > max_diff ? tmp_diff : max_diff;
@@ -277,12 +293,12 @@ double diff_angle(double angle_a, double angle_b)
  */
 double map_r(double value, double x_min, double x_max, double y_min, double y_max)
 {
-        double slope, output;
-        
-        slope = (y_max - y_min) / (x_max - x_min);
-        output = y_min + slope * (value - x_min);
-        
-        return output;
+	double slope, output;
+	
+	slope = (y_max - y_min) / (x_max - x_min);
+	output = y_min + slope * (value - x_min);
+	
+	return output;
 }
 
 /**
@@ -290,12 +306,12 @@ double map_r(double value, double x_min, double x_max, double y_min, double y_ma
  */
 double clip_r(double value, double min, double max)
 {
-        double clipped_value;
-        
-        clipped_value = value < min ? min : value;
-        clipped_value = value > max ? max : clipped_value;
-        
-        return clipped_value;
+	double clipped_value;
+	
+	clipped_value = value < min ? min : value;
+	clipped_value = value > max ? max : clipped_value;
+	
+	return clipped_value;
 }
 
 

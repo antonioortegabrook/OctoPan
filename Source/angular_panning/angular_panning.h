@@ -122,6 +122,11 @@ void set_spread(t_source *source, double new_spread, double minimum_width);
  */
 void set_density(t_source *source, double new_density);
 
+/**
+ Compute gains from a t_source and a t_layout
+ */
+void compute_gains(double *gains, t_source *source, t_layout *layout);
+
 
 
 

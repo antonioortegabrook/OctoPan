@@ -35,13 +35,13 @@ double quadratic_gain(double speaker_angle, double source_azimuth, double source
 	double gain = 0;
 	
 	if (speaker_angle < source_azimuth - M_PI)
-		gain = 1 - pow(pow((speaker_angle - source_azimuth + 2 * M_PI) / (source_width / 2), 2), xparam);
+		gain = 1 - pow(pow((speaker_angle - source_azimuth + 2 * M_PI) / (source_width * 0.5), 2), xparam);
 	
 	else if (speaker_angle > source_azimuth + M_PI)
-		gain = 1 - pow(pow((speaker_angle - source_azimuth - 2 * M_PI) / (source_width / 2), 2), xparam);
+		gain = 1 - pow(pow((speaker_angle - source_azimuth - 2 * M_PI) / (source_width * 0.5), 2), xparam);
 	
 	else if (speaker_angle >= source_azimuth - M_PI && speaker_angle <= source_azimuth + M_PI)
-		gain = 1 - pow(pow((speaker_angle - source_azimuth) / (source_width / 2), 2), xparam);
+		gain = 1 - pow(pow((speaker_angle - source_azimuth) / (source_width * 0.5), 2), xparam);
 	
 	if (gain < 0)
 		gain = 0;
@@ -332,8 +332,8 @@ double spread_to_width(double spread, double minimum_width)
 	spread = spread < 0	? 0	: spread;
 	spread = spread > 100	? 100	: spread;
 	
-	
-	e = pow(spread / 100, 2 * (1 + spread / 200)) * (4 * M_PI - minimum_width);
+//	e = pow(spread / 100 , 2 * (1 + spread / 200   ) * (4 * M_PI - minimum_width);
+	e = pow(spread * 0.01, 2 * (1 + spread * 0.005)) * (4 * M_PI - minimum_width);
 	
 	width = e + minimum_width;
 	
@@ -348,8 +348,8 @@ double density_to_xparam(double density)
 	density = density < -10	? -10	: density;
 	density = density >  10	?  10	: density;
 	
-	
-	xparam = 0.1 + pow((density + 10) / 10.3, 3.1);
+//	xparam = 0.1 + pow((density + 10) / 10.3	   , 3.1);
+	xparam = 0.1 + pow((density + 10) *0.09708737864078, 3.1);
 	
 	return xparam;
 }

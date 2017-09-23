@@ -57,6 +57,7 @@ void normalize(double *gains_array, long array_length)
 {
 	double *gains_ptr;
 	double square_sum = 0;
+	double inverted_square_sum;
 	
 	gains_ptr = gains_array;
 	for (long i = 0; i < array_length; i++)
@@ -69,9 +70,11 @@ void normalize(double *gains_array, long array_length)
 	if (!square_sum)
 		return;
 	
+	inverted_square_sum = 1 / sqrt(square_sum);
+	
 	gains_ptr = gains_array;
 	for (long i = 0; i < array_length; i++)
-		*gains_ptr++ *= 1 / sqrt(square_sum);
+		*gains_ptr++ *= inverted_square_sum;
 	
 	
 	return;
@@ -83,8 +86,11 @@ void normalize(double *gains_array, long array_length)
  */
 void fill_spk_pos_array(double *array, long nspeakers, double offset)
 {
+	double mod_offset	= 1 + fmod(offset, 1);
+	double angle		= 2 * M_PI / nspeakers;
+	
 	for (long i = 0; i < nspeakers; i ++)
-		*array++ = (i - 1 + fmod(offset, 1)) * (2 * M_PI / nspeakers);
+		*array++ = (i - mod_offset) * angle;
 }
 
 
@@ -327,7 +333,7 @@ double spread_to_width(double spread, double minimum_width)
 	spread = spread > 100	? 100	: spread;
 	
 	
-	e = pow(fabs(spread) / 100, 2 * (1 + fabs(spread) / 200)) * (4 * M_PI - minimum_width);
+	e = pow(spread / 100, 2 * (1 + spread / 200)) * (4 * M_PI - minimum_width);
 	
 	width = e + minimum_width;
 	

@@ -79,7 +79,7 @@ OctoPanAudioProcessor::OctoPanAudioProcessor()	:	parameters(*this, nullptr)
 		    *parameters.getRawParameterValue("density"),
 		    2 * layout.spk_diff);
 	
-	computeGains();
+	compute_gains(gains, &source, &layout);;
 }
 
 OctoPanAudioProcessor::~OctoPanAudioProcessor()
@@ -165,7 +165,7 @@ void OctoPanAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
 			*parameters.getRawParameterValue("density"),
 			2 * layout.spk_diff);
 	
-	computeGains();
+	compute_gains(gains, &source, &layout);;
 	
 	for (int i = 0; i < nspeakers; i++)
 		previousGains[i] = gains[i];
@@ -243,7 +243,7 @@ void OctoPanAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer&
 			    *parameters.getRawParameterValue("density"),
 			    2 * layout.spk_diff);
 		
-		computeGains();
+		compute_gains(gains, &source, &layout);;
 		
 		for (int channel = 0; channel < totalNumOutputChannels; ++channel) {
 			
@@ -304,7 +304,7 @@ void OctoPanAudioProcessor::setStateInformation (const void* data, int sizeInByt
 		    *parameters.getRawParameterValue("density"),
 		    2 * layout.spk_diff);
 	
-	computeGains();
+	compute_gains(gains, &source, &layout);;
 }
 
 //==============================================================================
@@ -314,22 +314,3 @@ AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 	return new OctoPanAudioProcessor();
 }
 
-
-//===== our own functions =====
-
-void OctoPanAudioProcessor::setOffset(double newOffset)
-{
-	fill_spk_layout(&layout, nspeakers, newOffset);
-}
-
-
-void OctoPanAudioProcessor::computeGains()
-{
-	// 1- calcular ganancias
-	for (long i = 0; i < nspeakers; i++)
-		gains[i] = quadratic_gain(layout.speaker_pos[i], source.azimuth, source.width, source.xparam);
-	
-	
-	// 2- normalizar ganancias
-	normalize(gains, layout.nspeakers);
-}

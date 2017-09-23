@@ -65,8 +65,6 @@ public:
 	t_source source;
 	t_layout layout;
 	
-	void setOffset(double newOffset);
-	void computeGains();
 	
 private:
 	AudioProcessorValueTreeState parameters;

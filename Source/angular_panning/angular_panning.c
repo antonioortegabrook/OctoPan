@@ -86,11 +86,11 @@ void normalize(double *gains_array, long array_length)
  */
 void fill_spk_pos_array(double *array, long nspeakers, double offset)
 {
-	double mod_offset	= 1 + fmod(offset, 1);
+	double mod_offset	= fmod(offset, 1);
 	double angle		= 2 * M_PI / nspeakers;
 	
 	for (long i = 0; i < nspeakers; i ++)
-		*array++ = (i - mod_offset) * angle;
+		*array++ = (i - 1 + mod_offset) * angle;
 }
 
 

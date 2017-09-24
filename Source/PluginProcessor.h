@@ -18,7 +18,7 @@
 //==============================================================================
 /**
  */
-class OctoPanAudioProcessor  : public AudioProcessor
+class OctoPanAudioProcessor	:	public AudioProcessor
 {
 public:
 	//==============================================================================
@@ -76,6 +76,11 @@ private:
 	
 	double  gains[8];
 	double  previousGains[8];
+	
+	void	updateLayoutAndSource();
+	void	layout_update();
+	void	source_update();
+
 	
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OctoPanAudioProcessor)

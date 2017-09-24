@@ -69,17 +69,6 @@ OctoPanAudioProcessor::OctoPanAudioProcessor()	:	parameters(*this, nullptr)
 	
 	nspeakers = 8;
 	
-	fill_spk_layout(&layout,
-			nspeakers,
-			*parameters.getRawParameterValue("offset") >= 0.5 ? 0.5 : 0);
-	
-	init_source(&source,
-		    *parameters.getRawParameterValue("azimuth"),
-		    *parameters.getRawParameterValue("spread"),
-		    *parameters.getRawParameterValue("density"),
-		    2 * layout.spk_diff);
-	
-	compute_gains(gains, &source, &layout);;
 }
 
 OctoPanAudioProcessor::~OctoPanAudioProcessor()
@@ -165,10 +154,7 @@ void OctoPanAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
 			*parameters.getRawParameterValue("density"),
 			2 * layout.spk_diff);
 	
-	compute_gains(gains, &source, &layout);;
-	
-	for (int i = 0; i < nspeakers; i++)
-		previousGains[i] = gains[i];
+	compute_gains(gains, &source, &layout);
 	
 }
 
@@ -208,48 +194,66 @@ void OctoPanAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer&
 	const int totalNumOutputChannels = getTotalNumOutputChannels();
 	
 	
+	// Parámetros
+	const double currentAzimuth	= *parameters.getRawParameterValue("azimuth");
+	const double currentSpread	= *parameters.getRawParameterValue("spread");
+	const double currentDensity	= *parameters.getRawParameterValue("density");
+	const double currentOffset	= *parameters.getRawParameterValue("offset");
+		
+	
 	// This is the place where you'd normally do the guts of your plugin's
 	// audio processing...
 	for (int channel = 1; channel < totalNumOutputChannels; ++channel)
 	{
-		// ..do something to the data...
 		// copiamos el canal 1 a todos los demás
 		buffer.copyFrom(channel, 0, buffer, 0, 0, buffer.getNumSamples());
 	}
 	
-	/*
-		Reescribir todo esto de una manera más elegante
-	 */
-
+        
 	
-	if (*parameters.getRawParameterValue("azimuth") != previousAzimuth	||
-	    *parameters.getRawParameterValue("spread") != previousSpread	||
-	    *parameters.getRawParameterValue("density") != previousDensity	||
-	    *parameters.getRawParameterValue("offset") != previousOffset) {
+	// Si algún parámetro cambió...
+	
+	if (currentAzimuth	!= previousAzimuth	||
+	    currentSpread	!= previousSpread	||
+	    currentDensity	!= previousDensity	||
+	    currentOffset	!= previousOffset)		{
+		
+		// ...copiamos las ganancias actuales;
+		double *previousGainsPtr	= previousGains;
+		double *gainsPtr		= gains;
 		
 		for (int i = 0; i < nspeakers; i++)
-			previousGains[i] = gains[i];
+			*previousGainsPtr++ = *gainsPtr++;
 		
-		previousAzimuth	= *parameters.getRawParameterValue("azimuth");
-		previousSpread	= *parameters.getRawParameterValue("spread");
-		previousDensity	= *parameters.getRawParameterValue("density");
-		previousOffset	= *parameters.getRawParameterValue("offset");
+		// si el parámetro modificado es offset...
+		if (currentOffset != previousOffset) {
+			
+			// ...actualizamos layout...;
+			fill_spk_layout(&layout, nspeakers, currentOffset >= 0.5 ? 0.5 : 0);
+			
+			// ...y copiamos offset;
+			previousOffset	= currentOffset;
+		}
 		
-		fill_spk_layout(&layout, nspeakers, *parameters.getRawParameterValue("offset") >= 0.5 ? 0.5 : 0);
+		// si en cambio es un parámetro de fuente...
+		else {
+			// ...actualizamos fuente...
+			init_source(&source, currentAzimuth, currentSpread, currentDensity, 2 * layout.spk_diff);
+			
+			// ... y copiamos los nuevos parámetros.
+			previousAzimuth	= currentAzimuth;
+			previousSpread	= currentSpread;
+			previousDensity	= currentDensity;
+		}
 		
-		init_source(&source,
-			    *parameters.getRawParameterValue("azimuth"),
-			    *parameters.getRawParameterValue("spread"),
-			    *parameters.getRawParameterValue("density"),
-			    2 * layout.spk_diff);
+		// por último, recalculamos ganancias...
+		compute_gains(gains, &source, &layout);
 		
-		compute_gains(gains, &source, &layout);;
-		
+		// ... y aplicamos rampa. Luego copiamos las ganancias actuales
 		for (int channel = 0; channel < totalNumOutputChannels; ++channel) {
 			
 			buffer.applyGainRamp(channel, 0, buffer.getNumSamples(), previousGains[channel], gains[channel]);
 			previousGains[channel] = gains[channel];
-			
 		}
 
 	} else {
@@ -294,6 +298,11 @@ void OctoPanAudioProcessor::setStateInformation (const void* data, int sizeInByt
 	
 	
 	
+	previousAzimuth	= *parameters.getRawParameterValue("azimuth");
+	previousSpread	= *parameters.getRawParameterValue("spread");
+	previousDensity	= *parameters.getRawParameterValue("density");
+	previousOffset	= *parameters.getRawParameterValue("offset");
+	
 	fill_spk_layout(&layout,
 			nspeakers,
 			*parameters.getRawParameterValue("offset") >= 0.5 ? 0.5 : 0);
@@ -304,8 +313,15 @@ void OctoPanAudioProcessor::setStateInformation (const void* data, int sizeInByt
 		    *parameters.getRawParameterValue("density"),
 		    2 * layout.spk_diff);
 	
-	compute_gains(gains, &source, &layout);;
+	compute_gains(gains, &source, &layout);
 }
+
+void OctoPanAudioProcessor::updateLayoutAndSource()
+{
+	
+}
+
+
 
 //==============================================================================
 // This creates new instances of the plugin..

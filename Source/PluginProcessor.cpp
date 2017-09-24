@@ -308,11 +308,6 @@ void OctoPanAudioProcessor::setStateInformation (const void* data, int sizeInByt
 	compute_gains(gains, &source, &layout);
 }
 
-void OctoPanAudioProcessor::updateLayoutAndSource()
-{
-	
-}
-
 
 
 //==============================================================================

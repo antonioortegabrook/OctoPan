@@ -32,6 +32,7 @@ SourceComponent::SourceComponent()
 	azimuthSlider.setSliderStyle (Slider::LinearHorizontal);
 	azimuthSlider.setLookAndFeel(&sliderLookAndFeel);
 	azimuthSlider.setTextBoxStyle (Slider::TextBoxRight, false, 32, 20);
+        azimuthSlider.setTextValueSuffix (CharPointer_UTF8 (" \xc2\xb0"));       // (UTF8 degree sign)
 
 	azimuthSlider.setRange(-180, 180);
 
@@ -50,6 +51,7 @@ SourceComponent::SourceComponent()
 	spreadSlider.setSliderStyle (Slider::LinearHorizontal);
 	spreadSlider.setLookAndFeel(&sliderLookAndFeel);
 	spreadSlider.setTextBoxStyle (Slider::TextBoxRight, false, 32, 20);
+        spreadSlider.setTextValueSuffix (" %");
 
 	spreadSlider.setRange(0, 100);
 	addAndMakeVisible(spreadSlider);

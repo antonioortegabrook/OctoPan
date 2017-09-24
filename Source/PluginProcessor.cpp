@@ -210,55 +210,47 @@ void OctoPanAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer&
 	}
 	
         
-	
-	// Si algún parámetro cambió...
+	/*
+	Si algún parámetro cambió, copiamos las ganancias actuales al array de ganancias previas;
+	Si el parámetro modificado es offset, actualizamos layout y copiamos offset a previousOffset;
+	Si en cambio es un parámetro de fuente, actualizamos fuente y copiamos los nuevos parámetros
+	 a previous.
+	Por último, recalculamos ganancias y aplicamos rampa. Luego copiamos las ganancias actuales
+	*/
 	
 	if (currentAzimuth	!= previousAzimuth	||
 	    currentSpread	!= previousSpread	||
 	    currentDensity	!= previousDensity	||
 	    currentOffset	!= previousOffset)		{
 		
-		// ...copiamos las ganancias actuales;
+		
 		double *previousGainsPtr	= previousGains;
 		double *gainsPtr		= gains;
 		
 		for (int i = 0; i < nspeakers; i++)
 			*previousGainsPtr++ = *gainsPtr++;
 		
-		// si el parámetro modificado es offset...
 		if (currentOffset != previousOffset) {
 			
-			// ...actualizamos layout...;
 			fill_spk_layout(&layout, nspeakers, currentOffset >= 0.5 ? 0.5 : 0);
-			
-			// ...y copiamos offset;
 			previousOffset	= currentOffset;
 		}
-		
-		// si en cambio es un parámetro de fuente...
 		else {
-			// ...actualizamos fuente...
 			init_source(&source, currentAzimuth, currentSpread, currentDensity, 2 * layout.spk_diff);
 			
-			// ... y copiamos los nuevos parámetros.
 			previousAzimuth	= currentAzimuth;
 			previousSpread	= currentSpread;
 			previousDensity	= currentDensity;
 		}
 		
-		// por último, recalculamos ganancias...
 		compute_gains(gains, &source, &layout);
 		
-		// ... y aplicamos rampa. Luego copiamos las ganancias actuales
-		for (int channel = 0; channel < totalNumOutputChannels; ++channel) {
-			
+		for (int channel = 0; channel < totalNumOutputChannels; ++channel)
 			buffer.applyGainRamp(channel, 0, buffer.getNumSamples(), previousGains[channel], gains[channel]);
-			previousGains[channel] = gains[channel];
-		}
+
 
 	} else {
 		for (int channel = 0; channel < totalNumOutputChannels; ++channel)
-			
 			buffer.applyGain(channel, 0, buffer.getNumSamples(), gains[channel]);
 	}
 

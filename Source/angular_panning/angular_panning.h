@@ -61,7 +61,17 @@ double speaker_gain(double speaker_angle, double source_azimuth, double source_w
  Compute gain for a given speaker based on source azimuth and width
  angles are in Pi radians
  xparam recommended range: 0.5 - 3
- */double quadratic_gain(double speaker_angle, double source_azimuth, double source_width, double xparam);
+ */
+double quadratic_gain(double speaker_angle, double source_azimuth, double source_width, double xparam);
+
+/**
+ Compute gains for a given set of speakers based on source azimuth and width
+ (this is a more optimized version of the previous function)
+ 
+ angles in pi radians
+ xparam recommended range: 0.5 - 3
+ */
+void quadratic_gain_array(double *gains_array, double *speaker_positions_array, long nspeakers, double source_azimuth, double source_width, double xparam);
 
 
 /**
@@ -121,6 +131,11 @@ void set_spread(t_source *source, double new_spread, double minimum_width);
  Set density and compute xparam
  */
 void set_density(t_source *source, double new_density);
+
+/**
+ Compute gains from a t_source and a t_layout (old version)
+ */
+void compute_gains_old(double *gains, t_source *source, t_layout *layout);
 
 /**
  Compute gains from a t_source and a t_layout

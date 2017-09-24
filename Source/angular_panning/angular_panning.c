@@ -50,6 +50,48 @@ double quadratic_gain(double speaker_angle, double source_azimuth, double source
 }
 
 /**
+ Compute gains for a given set of speakers based on source azimuth and width
+ (this is a more optimized version of the previous function)
+ 
+ angles in pi radians
+ xparam recommended range: 0.5 - 3
+ */
+void quadratic_gain_array(double *gains_array, double *speaker_positions_array, long nspeakers, double source_azimuth, double source_width, double xparam)
+{
+	// Constant values
+	double m_source_azimuth_plus_two_PI	= -source_azimuth + 2 * M_PI;
+	double m_source_azimuth_minus_two_PI	= -source_azimuth - 2 * M_PI;
+	double source_azimuth_plus_PI		= source_azimuth + M_PI;
+	double source_azimuth_minus_PI		= source_azimuth - M_PI;
+	double r_half_source_width		= 1 / (source_width * 0.5);
+	
+	// Our pointers
+	double *speaker_gain	= gains_array;
+	double *speaker_angle	= speaker_positions_array;
+	
+	for (int i = 0; i < nspeakers; i++) {
+		
+		if (*speaker_angle < source_azimuth_minus_PI)
+			*speaker_gain = 1 - pow(pow((*speaker_angle + m_source_azimuth_plus_two_PI) * r_half_source_width, 2), xparam);
+		
+		else if (*speaker_angle > source_azimuth_plus_PI)
+			*speaker_gain = 1 - pow(pow((*speaker_angle + m_source_azimuth_minus_two_PI) * r_half_source_width, 2), xparam);
+		
+		else if (*speaker_angle >= source_azimuth_minus_PI && speaker_positions_array[i] <= source_azimuth_plus_PI)
+			*speaker_gain = 1 - pow(pow((*speaker_angle - source_azimuth) * r_half_source_width, 2), xparam);
+		
+		else
+			*speaker_gain = 0;
+		
+		*speaker_gain = *speaker_gain < 0 ? 0 : *speaker_gain;
+		
+		speaker_gain++;
+		speaker_angle++;
+	}
+}
+
+
+/**
  Normalize gains
  Returns in place
  */
@@ -144,9 +186,9 @@ void set_density(t_source *source, double new_density)
 }
 
 /**
- Compute gains from a t_source and a t_layout
+ Compute gains from a t_source and a t_layout (old version)
  */
-void compute_gains(double *gains, t_source *source, t_layout *layout)
+void compute_gains_old(double *gains, t_source *source, t_layout *layout)
 {
 	double *gain_ptr	= gains;
 	double *speaker_ptr	= layout->speaker_pos;
@@ -158,6 +200,15 @@ void compute_gains(double *gains, t_source *source, t_layout *layout)
 }
 
 
+/**
+ Compute gains from a t_source and a t_layout
+ */
+void compute_gains(double *gains, t_source *source, t_layout *layout)
+{
+	quadratic_gain_array(gains, layout->speaker_pos, layout->nspeakers, source->azimuth, source->width, source->xparam);
+	
+	normalize(gains, layout->nspeakers);
+}
 
 
 

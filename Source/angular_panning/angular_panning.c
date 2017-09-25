@@ -6,7 +6,7 @@
 //
 //
 
-#include <math.h>
+
 
 #include "angular_panning.h"
 
@@ -19,7 +19,7 @@ double speaker_gain(double speaker_angle, double source_azimuth, double source_w
 {
 	double gain;
 	
-	gain = cos((M_PI * speaker_angle) / source_width - source_azimuth * (nspeakers / 2) * ((2 * M_PI / nspeakers) / source_width));
+	gain = cos((M_PI * speaker_angle) / source_width - source_azimuth * (nspeakers / 2) * ((M_TWO_PI / nspeakers) / source_width));
 	
 	return gain;
 }
@@ -35,10 +35,10 @@ double quadratic_gain(double speaker_angle, double source_azimuth, double source
 	double gain = 0;
 	
 	if (speaker_angle < source_azimuth - M_PI)
-		gain = 1 - pow(pow((speaker_angle - source_azimuth + 2 * M_PI) / (source_width * 0.5), 2), xparam);
+		gain = 1 - pow(pow((speaker_angle - source_azimuth + M_TWO_PI) / (source_width * 0.5), 2), xparam);
 	
 	else if (speaker_angle > source_azimuth + M_PI)
-		gain = 1 - pow(pow((speaker_angle - source_azimuth - 2 * M_PI) / (source_width * 0.5), 2), xparam);
+		gain = 1 - pow(pow((speaker_angle - source_azimuth - M_TWO_PI) / (source_width * 0.5), 2), xparam);
 	
 	else if (speaker_angle >= source_azimuth - M_PI && speaker_angle <= source_azimuth + M_PI)
 		gain = 1 - pow(pow((speaker_angle - source_azimuth) / (source_width * 0.5), 2), xparam);
@@ -59,8 +59,8 @@ double quadratic_gain(double speaker_angle, double source_azimuth, double source
 void quadratic_gain_array(double *gains_array, double *speaker_positions_array, long nspeakers, double source_azimuth, double source_width, double xparam)
 {
 	// Constant values
-	double m_source_azimuth_plus_two_PI	= -source_azimuth + 2 * M_PI;
-	double m_source_azimuth_minus_two_PI	= -source_azimuth - 2 * M_PI;
+	double m_source_azimuth_plus_two_PI	= -source_azimuth + M_TWO_PI;
+	double m_source_azimuth_minus_two_PI	= -source_azimuth - M_TWO_PI;
 	double source_azimuth_plus_PI		= source_azimuth + M_PI;
 	double source_azimuth_minus_PI		= source_azimuth - M_PI;
 	double r_half_source_width		= 1 / (source_width * 0.5);
@@ -129,7 +129,7 @@ void normalize(double *gains_array, long array_length)
 void fill_spk_pos_array(double *array, long nspeakers, double offset)
 {
 	double mod_offset	= fmod(offset, 1);
-	double angle		= 2 * M_PI / nspeakers;
+	double angle		= M_TWO_PI / nspeakers;
 	
 	for (long i = 0; i < nspeakers; i ++)
 		*array++ = (i - 1 + mod_offset) * angle;
@@ -221,7 +221,7 @@ void fill_spk_pos_layout(double *array, long nspeakers, double offset, long layo
 			
 		case LAYOUT_EQUAL:
 			for (long i = 0; i < nspeakers; i ++)
-				array[i] = (i - 1 + fmod(offset, 1)) * (2 * M_PI / nspeakers);
+				array[i] = (i - 1 + fmod(offset, 1)) * (M_TWO_PI / nspeakers);
 			break;
 			
 		case LAYOUT_STEREO:
@@ -308,7 +308,7 @@ double deg_to_rad(double degrees)
 	if(wrapped_deg < 0)
 		wrapped_deg += 360;
 	
-	radians = wrapped_deg * M_PI / 180;
+	radians = wrapped_deg * M_PI_180;
 	
 	return radians;
 }
@@ -319,10 +319,10 @@ double wrap_angle(double radians)
 {
 	double wrapped_rad;
 	
-	wrapped_rad = fmod(radians, 2 * M_PI);
+	wrapped_rad = fmod(radians, M_TWO_PI);
 	
 	if (wrapped_rad < 0)
-		wrapped_rad += 2 * M_PI;
+		wrapped_rad += M_TWO_PI;
 	
 	return wrapped_rad;
 }
@@ -335,7 +335,7 @@ double diff_angle(double angle_a, double angle_b)
 	double diff_a, diff_b, min_diff;
 	
 	diff_a = fabs(angle_b - angle_a);
-	diff_b = fabs(2 * M_PI - diff_a);
+	diff_b = fabs(M_TWO_PI - diff_a);
 	
 	min_diff = diff_a < diff_b ? diff_a : diff_b;
 	
@@ -400,7 +400,7 @@ double density_to_xparam(double density)
 	density = density >  10	?  10	: density;
 	
 //	xparam = 0.1 + pow((density + 10) / 10.3	   , 3.1);
-	xparam = 0.1 + pow((density + 10) *0.09708737864078, 3.1);
+	xparam = 0.1 + pow((density + 10) * 0.09708737864077669754703237003923277370631694793701171875, 3.1);
 	
 	return xparam;
 }

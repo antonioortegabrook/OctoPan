@@ -197,7 +197,7 @@
 		1BAFD95E84463E2EC3088E41 /* include_juce_video.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_video.mm; path = ../../JuceLibraryCode/include_juce_video.mm; sourceTree = SOURCE_ROOT; };
 		1BFB5934C1C7D4D72D73C6F5 /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_audio_formats; path = "~/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
 		1DEB5AB013C21F9E6A9C5003 /* OctoPan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = OctoPan.entitlements; sourceTree = SOURCE_ROOT; };
-		219A00061D31B470C52462CA /* angular_panning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = angular_panning.h; path = ../../Source/angular_panning/angular_panning.h; sourceTree = SOURCE_ROOT; };
+		219A00061D31B470C52462CA /* angular_panning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = angular_panning.h; path = ../../Source/angular_panning/angular_panning.h; sourceTree = SOURCE_ROOT; usesTabs = 1; };
 		257158E000F41D17AFC4F5EE /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_data_structures; path = "~/JUCE/modules/juce_data_structures"; sourceTree = "<absolute>"; };
 		2723C6438C0E412BEA4A9732 /* juce_video */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_video; path = "~/JUCE/modules/juce_video"; sourceTree = "<absolute>"; };
 		28059FF30C3B2258B4F87424 /* PannerComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PannerComponent.h; path = ../../Source/GUI/PannerComponent.h; sourceTree = SOURCE_ROOT; };

@@ -21,7 +21,8 @@
 
 
 
-
+/** Maximum number of speakers
+ */
 #define MAX_SPEAKERS 8
 
 
@@ -37,7 +38,8 @@ typedef struct _source
 	double density;
 } t_source;
 
-typedef struct _layout {
+typedef struct _layout
+{
 	
 	long		nspeakers;			// # of speakers
 	double		offset;

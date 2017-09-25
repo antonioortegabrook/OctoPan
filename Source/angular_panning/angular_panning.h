@@ -12,8 +12,8 @@
 #include <math.h>
 
 /** Useful macros to deal with angles, in addition to the POSIX ones defined in math.h.
-	Like the POSIX macros they're all double-precission literals. In the future we
-	should define them as long-doubles.
+	Like the POSIX macros, they're all double-precission literals. Maybe we should
+	define them as long-doubles too?
  */
 #define M_180_PI        57.29577951308232286464772187173366546630859375			/* 180 / pi	*/
 #define M_PI_180        0.0174532925199432954743716805978692718781530857086181640625	/* pi / 180	*/

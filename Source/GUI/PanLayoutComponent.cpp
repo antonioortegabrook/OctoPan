@@ -54,25 +54,25 @@ void PanLayoutComponent::paint (Graphics& g)
 	
 	centreX = speakerArea.getCentreX();
 	centreY = speakerArea.getCentreY();
-
-
+	
+	
 	speaker.clear();
 	speakerLayout.clear();
 	
 	float rectX1_X4, rectY1_Y2, rectX2_X3, rectY3_Y4;
 	float trapezoidX1, trapezoidY1_Y2, trapezoidX2, trapezoidX3, trapezoidY3_Y4, trapezoidX4;
 	
-	rectX1_X4 = centreX	- spkMagic;
-	rectY1_Y2 = speakerArea.getY();
-	rectX2_X3 = centreX	+ spkMagic;
-	rectY3_Y4 = speakerArea.getY()	+ spkMagic;
+	rectX1_X4	= centreX		- spkMagic;
+	rectY1_Y2	= speakerArea.getY();
+	rectX2_X3	= centreX		+ spkMagic;
+	rectY3_Y4	= speakerArea.getY()	+ spkMagic;
 	
-	trapezoidX1 = centreX	- spkMagic;
-	trapezoidY1_Y2 = speakerArea.getY()		+ spkMagic * 1.5;
-	trapezoidX2 = centreX	+ spkMagic;
-	trapezoidX3 = centreX	+ spkMagic * 2;
-	trapezoidY3_Y4 = speakerArea.getY()		+ spkMagic * 2.5;
-	trapezoidX4 = centreX	- spkMagic * 2;
+	trapezoidX1	= centreX		- spkMagic;
+	trapezoidY1_Y2	= speakerArea.getY()	+ spkMagic * 1.5;
+	trapezoidX2	= centreX		+ spkMagic;
+	trapezoidX3	= centreX		+ spkMagic * 2;
+	trapezoidY3_Y4	= speakerArea.getY()	+ spkMagic * 2.5;
+	trapezoidX4	= centreX		- spkMagic * 2;
 	
 	
 	// rectangle
@@ -110,7 +110,7 @@ void PanLayoutComponent::paint (Graphics& g)
 		speakerLabel[i].setText(String((i + 1) % 8 + 1), NotificationType::dontSendNotification);
 	}
 	
-
+	
 	
 	g.setColour(GREY_DETAIL);
 	g.fillPath(speakerLayout);

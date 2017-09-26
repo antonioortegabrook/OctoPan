@@ -69,7 +69,7 @@ void quadratic_gain_array(double *gains_array, double *speaker_positions_array, 
 	double *speaker_gain	= gains_array;
 	double *speaker_angle	= speaker_positions_array;
 	
-	for (int i = 0; i < nspeakers; i++) {
+	for (long i = nspeakers; i; i--) {
 		
 		if (*speaker_angle < source_azimuth_minus_PI)
 			*speaker_gain = 1 - pow(pow((*speaker_angle + m_source_azimuth_plus_two_PI) * r_half_source_width, 2), xparam);
@@ -102,7 +102,7 @@ void normalize(double *gains_array, long array_length)
 	double inverted_square_sum;
 	
 	gains_ptr = gains_array;
-	for (long i = 0; i < array_length; i++)
+	for (long i = array_length; i; i--)
 		square_sum += pow(*gains_ptr++, 2);
 	
 	
@@ -115,7 +115,7 @@ void normalize(double *gains_array, long array_length)
 	inverted_square_sum = 1 / sqrt(square_sum);
 	
 	gains_ptr = gains_array;
-	for (long i = 0; i < array_length; i++)
+	for (long i = array_length; i; i--)
 		*gains_ptr++ *= inverted_square_sum;
 	
 	
@@ -383,7 +383,7 @@ double spread_to_width(double spread, double minimum_width)
 	spread = spread < 0	? 0	: spread;
 	spread = spread > 100	? 100	: spread;
 	
-//	e = pow(spread / 100 , 2 * (1 + spread / 200   ) * (4 * M_PI - minimum_width);
+//	e = pow(spread / 100 , 2 * (1 + spread / 200  )) * (4 * M_PI - minimum_width);
 	e = pow(spread * 0.01, 2 * (1 + spread * 0.005)) * (4 * M_PI - minimum_width);
 	
 	width = e + minimum_width;

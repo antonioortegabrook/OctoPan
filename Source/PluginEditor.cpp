@@ -36,7 +36,7 @@ OctoPanAudioProcessorEditor::OctoPanAudioProcessorEditor (OctoPanAudioProcessor&
 	
 	addAndMakeVisible(source);
 	azimuthAttachment = new SliderAttachment (valueTreeState, "azimuth", source.azimuthSlider);
-	spreadAttachment = new SliderAttachment (valueTreeState, "spread", source.spreadSlider);
+	spreadAttachment  = new SliderAttachment (valueTreeState, "spread",  source.spreadSlider);
 	densityAttachment = new SliderAttachment (valueTreeState, "density", source.densitySlider);
 	
 	addAndMakeVisible(layout);
@@ -90,8 +90,8 @@ void OctoPanAudioProcessorEditor::resized()
 
 
 /**
- We use this callback to update width and xparam in panner dial and offset en panner layout
- We need to use a mmLock to make sure GUI update is thread-safe wen parameters are changed
+ We use this callback to update width and xparam in panner dial and offset in panner layout
+ We need to use a mmLock to make sure GUI update is thread-safe when parameters are changed
  via automation.
  */
 void OctoPanAudioProcessorEditor::parameterChanged (const String& parameterID, float newValue)

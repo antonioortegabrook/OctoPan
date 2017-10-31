@@ -63,6 +63,6 @@ void PanDialComponent::setWidth(float angleInRadians)
 
 void PanDialComponent::setXparam(float angleInRadians)
 {
-        panDialLookAndFeel.setDensity(angleInRadians);
+        panDialLookAndFeel.setshape(angleInRadians);
         PanDialComponent::repaint();
 }

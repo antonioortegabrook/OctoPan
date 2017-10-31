@@ -49,7 +49,7 @@ private:
         ScopedPointer<SliderAttachment> pannerAzimuthAttachment;
         ScopedPointer<SliderAttachment> azimuthAttachment;
         ScopedPointer<SliderAttachment> spreadAttachment;
-        ScopedPointer<SliderAttachment> densityAttachment;
+        ScopedPointer<SliderAttachment> shapeAttachment;
         ScopedPointer<ButtonAttachment> offsetAttachment;
 
 	

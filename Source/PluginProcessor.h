@@ -71,7 +71,7 @@ private:
 	
 	double	previousAzimuth;
 	double	previousSpread;
-	double	previousDensity;
+	double	previousshape;
 	bool	previousOffset;
 	
 	double  gains[8];

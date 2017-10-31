@@ -35,7 +35,7 @@ typedef struct _source
 	double width;
 	double xparam;
 	double spread;
-	double density;
+	double shape;
 } t_source;
 
 typedef struct _layout
@@ -120,7 +120,7 @@ double maximum_difference(double *arr, long len);
 
 double spread_to_width(double spread, double minimum_width);
 
-double density_to_xparam(double density);
+double shape_to_xparam(double shape);
 
 
 
@@ -134,7 +134,7 @@ void fill_spk_layout(t_layout *layout, long nspeakers, double offset);
 /**
  Initialize a t_source struct
  */
-void init_source(t_source *source, double azimuth_degrees, double spread, double density, double minimum_width);
+void init_source(t_source *source, double azimuth_degrees, double spread, double shape, double minimum_width);
 
 /**
  Set spread and compute width
@@ -142,9 +142,9 @@ void init_source(t_source *source, double azimuth_degrees, double spread, double
 void set_spread(t_source *source, double new_spread, double minimum_width);
 
 /**
- Set density and compute xparam
+ Set shape and compute xparam
  */
-void set_density(t_source *source, double new_density);
+void set_shape(t_source *source, double new_shape);
 
 /**
  Compute gains from a t_source and a t_layout (old version)

@@ -155,15 +155,15 @@ void fill_spk_layout(t_layout *layout, long nspeakers, double offset)
 /**
  Initialize a t_source struct
  */
-void init_source(t_source *source, double azimuth_degrees, double spread, double density, double minimum_width)
+void init_source(t_source *source, double azimuth_degrees, double spread, double shape, double minimum_width)
 {
 	source->azimuth = deg_to_rad(azimuth_degrees);
 	
 	source->spread = spread;
-	source->density = density;
+	source->shape = shape;
 	
 	source->width = spread_to_width(spread, minimum_width);
-	source->xparam = density_to_xparam(density);
+	source->xparam = shape_to_xparam(shape);
 }
 
 
@@ -177,12 +177,12 @@ void set_spread(t_source *source, double new_spread, double minimum_width)
 }
 
 /**
- Set density and compute xparam
+ Set shape and compute xparam
  */
-void set_density(t_source *source, double new_density)
+void set_shape(t_source *source, double new_shape)
 {
-	source->density = new_density;
-	source->xparam = density_to_xparam(new_density);
+	source->shape = new_shape;
+	source->xparam = shape_to_xparam(new_shape);
 }
 
 /**
@@ -391,16 +391,16 @@ double spread_to_width(double spread, double minimum_width)
 	return width;
 }
 
-double density_to_xparam(double density)
+double shape_to_xparam(double shape)
 {
 	double xparam;
 	
 	// Clip values between -10 and 10
-	density = density < -10	? -10	: density;
-	density = density >  10	?  10	: density;
+	shape = shape < -10	? -10	: shape;
+	shape = shape >  10	?  10	: shape;
 	
-//	xparam = 0.1 + pow((density + 10) / 10.3	   , 3.1);
-	xparam = 0.1 + pow((density + 10) * 0.09708737864077669754703237003923277370631694793701171875, 3.1);
+//	xparam = 0.1 + pow((shape + 10) / 10.3	   , 3.1);
+	xparam = 0.1 + pow((shape + 10) * 0.09708737864077669754703237003923277370631694793701171875, 3.1);
 	
 	return xparam;
 }

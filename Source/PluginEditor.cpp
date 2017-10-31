@@ -30,14 +30,14 @@ OctoPanAudioProcessorEditor::OctoPanAudioProcessorEditor (OctoPanAudioProcessor&
 	setSize(400, 154);
 	
 	vts.addParameterListener ("spread", this);
-	vts.addParameterListener ("density", this);
+	vts.addParameterListener ("shape", this);
 	vts.addParameterListener ("offset", this);
 	
 	
 	addAndMakeVisible(source);
 	azimuthAttachment = new SliderAttachment (valueTreeState, "azimuth", source.azimuthSlider);
 	spreadAttachment  = new SliderAttachment (valueTreeState, "spread",  source.spreadSlider);
-	densityAttachment = new SliderAttachment (valueTreeState, "density", source.densitySlider);
+	shapeAttachment = new SliderAttachment (valueTreeState, "shape", source.shapeSlider);
 	
 	addAndMakeVisible(layout);
 	offsetAttachment = new ButtonAttachment (valueTreeState, "offset", layout.offsetButton);
@@ -45,7 +45,7 @@ OctoPanAudioProcessorEditor::OctoPanAudioProcessorEditor (OctoPanAudioProcessor&
 	addAndMakeVisible(panner);
 	pannerAzimuthAttachment = new SliderAttachment (valueTreeState, "azimuth", panner.dialComponent.dial);
 	panner.setWidth(processor.source.width);
-	panner.setXparam(clip_r(processor.source.width * map_r(processor.source.density, -10, 10, 0.2, 0.8),
+	panner.setXparam(clip_r(processor.source.width * map_r(processor.source.shape, -10, 10, 0.2, 0.8),
 				processor.layout.spk_diff,
 				processor.source.width - processor.layout.spk_diff));
 	
@@ -58,7 +58,7 @@ OctoPanAudioProcessorEditor::OctoPanAudioProcessorEditor (OctoPanAudioProcessor&
 OctoPanAudioProcessorEditor::~OctoPanAudioProcessorEditor()
 {
 	valueTreeState.removeParameterListener("spread", this);
-	valueTreeState.removeParameterListener("density", this);
+	valueTreeState.removeParameterListener("shape", this);
 	valueTreeState.removeParameterListener("offset", this);
 }
 
@@ -99,7 +99,7 @@ void OctoPanAudioProcessorEditor::parameterChanged (const String& parameterID, f
 	if (!parameterID.compare("spread")) {
 		
 		double width = spread_to_width(newValue, 2 * processor.layout.spk_diff);
-		double tmpxParamWidth = width * map_r(processor.source.density, -10, 10, 0.2, 0.8);
+		double tmpxParamWidth = width * map_r(processor.source.shape, -10, 10, 0.2, 0.8);
 		double xParamWidth = clip_r(tmpxParamWidth,
 					   processor.layout.spk_diff,
 					   width - processor.layout.spk_diff);
@@ -109,7 +109,7 @@ void OctoPanAudioProcessorEditor::parameterChanged (const String& parameterID, f
 		panner.setXparam(xParamWidth);
 	}
 	
-	else if (!parameterID.compare("density")) {
+	else if (!parameterID.compare("shape")) {
 		
 		double tmpxParamWidth = processor.source.width * map_r(newValue, -10, 10, 0.2, 0.8);
 		double xParamWidth = clip_r(tmpxParamWidth,

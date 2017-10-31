@@ -66,20 +66,20 @@ SourceComponent::SourceComponent()
 	
 	//-----------
 	
-	densitySlider.setSliderStyle (Slider::LinearHorizontal);
-	densitySlider.setLookAndFeel(&sliderLookAndFeel);
-	densitySlider.setTextBoxStyle (Slider::TextBoxRight, false, 32, 20);
+	shapeSlider.setSliderStyle (Slider::LinearHorizontal);
+	shapeSlider.setLookAndFeel(&sliderLookAndFeel);
+	shapeSlider.setTextBoxStyle (Slider::TextBoxRight, false, 32, 20);
 	
-	densitySlider.setRange(-10, 10);
-	addAndMakeVisible(densitySlider);
+	shapeSlider.setRange(-10, 10);
+	addAndMakeVisible(shapeSlider);
 	
-	densityLabel.setText("Density", dontSendNotification);
-	densityLabel.setJustificationType(Justification::centredRight);
-	densityLabel.attachToComponent(&densitySlider, true);
-	densityLabel.setFont(Font::Font("Arial Narrow", "Regular", 13));
-        densityLabel.Component::setColour(Label::textColourId, WHITE_TEXT_1);
-	densityLabel.setBorderSize(BorderSize<int> (0));
-	addAndMakeVisible(densityLabel);
+	shapeLabel.setText("Shape", dontSendNotification);
+	shapeLabel.setJustificationType(Justification::centredRight);
+	shapeLabel.attachToComponent(&shapeSlider, true);
+	shapeLabel.setFont(Font::Font("Arial Narrow", "Regular", 13));
+	shapeLabel.Component::setColour(Label::textColourId, WHITE_TEXT_1);
+	shapeLabel.setBorderSize(BorderSize<int> (0));
+	addAndMakeVisible(shapeLabel);
 	
 }
 
@@ -115,5 +115,5 @@ void SourceComponent::resized()
 	
 	azimuthSlider.setBounds(area.removeFromTop(sliderHeight));
 	spreadSlider.setBounds(area.removeFromTop(sliderHeight));
-	densitySlider.setBounds(area.removeFromTop(sliderHeight));
+	shapeSlider.setBounds(area.removeFromTop(sliderHeight));
 }

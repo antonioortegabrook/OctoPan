@@ -26,7 +26,7 @@ public:
 	
 	AstSlider_o azimuthSlider;
 	AstSlider_o spreadSlider;
-	AstSlider_o densitySlider;
+	AstSlider_o shapeSlider;
 	
 	void paint (Graphics&) override;
 	void resized() override;
@@ -37,7 +37,7 @@ private:
 	
 	Label azimuthLabel;
 	Label spreadLabel;
-	Label densityLabel;
+	Label shapeLabel;
 	
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SourceComponent)
 };

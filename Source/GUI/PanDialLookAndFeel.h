@@ -21,13 +21,13 @@ class panDialLookAndFeel : public LookAndFeel_V4
 {
 private:
 	float spreadWidth		/*	= double_Pi * 0.25f	*/;
-	float densityWidth		/*	= double_Pi * 0.125f	*/;
+	float shapeWidth		/*	= double_Pi * 0.125f	*/;
 	const float azimuthWidth	= double_Pi * 0.015625f;
 public:
 	panDialLookAndFeel()
 	{
 		setWidth(double_Pi * 0.25f);
-		setDensity(double_Pi * 0.125f);
+		setshape(double_Pi * 0.125f);
 	}
 	
 	void drawRotarySlider (Graphics& g, int x, int y, int width, int height, float sliderPos,
@@ -67,10 +67,10 @@ public:
 //                g.setColour(Colour(0xCf4A90E2));
 //                g.fillPath(s);
 		
-		// density --------
+		// shape --------
 		Path d;
-		d.addPieSegment(rx, ry, rw, rw, 0.0f, densityWidth, 0);
-		d.applyTransform (AffineTransform::rotation(angle - densityWidth * 0.5f, centreX, centreY));
+		d.addPieSegment(rx, ry, rw, rw, 0.0f, shapeWidth, 0);
+		d.applyTransform (AffineTransform::rotation(angle - shapeWidth * 0.5f, centreX, centreY));
 		
                 g.setColour(TRANSPARENT_WHITE);
                 g.fillPath(d);
@@ -104,9 +104,9 @@ public:
 	}
 	
 	
-	void setDensity(float angleInRadians)
+	void setshape(float angleInRadians)
 	{
-		densityWidth = angleInRadians;
+		shapeWidth = angleInRadians;
 	}
 };
 

@@ -44,8 +44,8 @@ OctoPanAudioProcessor::OctoPanAudioProcessor()	:	parameters(*this, nullptr)
 					 nullptr,
 					 nullptr);
 	
-	parameters.createAndAddParameter("density",
-					 "density",
+	parameters.createAndAddParameter("shape",
+					 "Shape",
 					 String(),
 					 NormalisableRange<float> (-10, 10),
 					 0,
@@ -140,7 +140,7 @@ void OctoPanAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
 	
 	previousAzimuth	= *parameters.getRawParameterValue("azimuth");
 	previousSpread	= *parameters.getRawParameterValue("spread");
-	previousDensity	= *parameters.getRawParameterValue("density");
+	previousshape	= *parameters.getRawParameterValue("shape");
 	previousOffset	= *parameters.getRawParameterValue("offset");
 	
 	
@@ -151,7 +151,7 @@ void OctoPanAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
 	init_source(&source,
 			*parameters.getRawParameterValue("azimuth"),
 			*parameters.getRawParameterValue("spread"),
-			*parameters.getRawParameterValue("density"),
+			*parameters.getRawParameterValue("shape"),
 			2 * layout.spk_diff);
 	
 	compute_gains(gains, &source, &layout);
@@ -197,7 +197,7 @@ void OctoPanAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer&
 	// Parámetros
 	const double currentAzimuth	= *parameters.getRawParameterValue("azimuth");
 	const double currentSpread	= *parameters.getRawParameterValue("spread");
-	const double currentDensity	= *parameters.getRawParameterValue("density");
+	const double currentshape	= *parameters.getRawParameterValue("shape");
 	const double currentOffset	= *parameters.getRawParameterValue("offset");
 		
 	
@@ -220,7 +220,7 @@ void OctoPanAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer&
 	
 	if (currentAzimuth	!= previousAzimuth	||
 	    currentSpread	!= previousSpread	||
-	    currentDensity	!= previousDensity	||
+	    currentshape	!= previousshape	||
 	    currentOffset	!= previousOffset)		{
 		
 		
@@ -236,11 +236,11 @@ void OctoPanAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer&
 			previousOffset	= currentOffset;
 		}
 		else {
-			init_source(&source, currentAzimuth, currentSpread, currentDensity, 2 * layout.spk_diff);
+			init_source(&source, currentAzimuth, currentSpread, currentshape, 2 * layout.spk_diff);
 			
 			previousAzimuth	= currentAzimuth;
 			previousSpread	= currentSpread;
-			previousDensity	= currentDensity;
+			previousshape	= currentshape;
 		}
 		
 		compute_gains(gains, &source, &layout);
@@ -292,7 +292,7 @@ void OctoPanAudioProcessor::setStateInformation (const void* data, int sizeInByt
 	
 	previousAzimuth	= *parameters.getRawParameterValue("azimuth");
 	previousSpread	= *parameters.getRawParameterValue("spread");
-	previousDensity	= *parameters.getRawParameterValue("density");
+	previousshape	= *parameters.getRawParameterValue("shape");
 	previousOffset	= *parameters.getRawParameterValue("offset");
 	
 	fill_spk_layout(&layout,
@@ -302,7 +302,7 @@ void OctoPanAudioProcessor::setStateInformation (const void* data, int sizeInByt
 	init_source(&source,
 		    *parameters.getRawParameterValue("azimuth"),
 		    *parameters.getRawParameterValue("spread"),
-		    *parameters.getRawParameterValue("density"),
+		    *parameters.getRawParameterValue("shape"),
 		    2 * layout.spk_diff);
 	
 	compute_gains(gains, &source, &layout);

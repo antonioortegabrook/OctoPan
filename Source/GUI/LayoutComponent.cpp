@@ -36,6 +36,7 @@ LayoutComponent::LayoutComponent()
 
 LayoutComponent::~LayoutComponent()
 {
+	offsetButton.setLookAndFeel(nullptr);    // <-revisar
 }
 
 void LayoutComponent::paint (Graphics& g)

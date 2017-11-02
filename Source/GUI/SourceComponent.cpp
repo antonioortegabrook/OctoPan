@@ -85,6 +85,9 @@ SourceComponent::SourceComponent()
 
 SourceComponent::~SourceComponent()
 {
+	azimuthSlider.setLookAndFeel(nullptr);    // <-revisar
+	spreadSlider.setLookAndFeel(nullptr);    // <-revisar
+	shapeSlider.setLookAndFeel(nullptr);    // <-revisar
 }
 
 void SourceComponent::paint (Graphics& g)

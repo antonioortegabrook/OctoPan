@@ -28,6 +28,7 @@ PanDialComponent::PanDialComponent()
 
 PanDialComponent::~PanDialComponent()
 {
+	dial.setLookAndFeel(nullptr);    // <-revisar
 }
 
 void PanDialComponent::paint (Graphics& g)

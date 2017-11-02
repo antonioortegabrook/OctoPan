@@ -63,7 +63,7 @@ void quadratic_gain_array(double *gains_array, double *speaker_positions_array, 
 	double m_source_azimuth_minus_two_PI	= -source_azimuth - M_TWO_PI;
 	double source_azimuth_plus_PI		= source_azimuth + M_PI;
 	double source_azimuth_minus_PI		= source_azimuth - M_PI;
-	double r_half_source_width		= 1 / (source_width * 0.5);
+	double r_half_source_width		= 1.0 / (source_width * 0.5);
 	
 	// Our pointers
 	double *speaker_gain	= gains_array;
@@ -77,7 +77,7 @@ void quadratic_gain_array(double *gains_array, double *speaker_positions_array, 
 		else if (*speaker_angle > source_azimuth_plus_PI)
 			*speaker_gain = 1 - pow(pow((*speaker_angle + m_source_azimuth_minus_two_PI) * r_half_source_width, 2), xparam);
 		
-		else if (*speaker_angle >= source_azimuth_minus_PI && speaker_positions_array[i] <= source_azimuth_plus_PI)
+		else if (*speaker_angle >= source_azimuth_minus_PI && *speaker_angle <= source_azimuth_plus_PI)
 			*speaker_gain = 1 - pow(pow((*speaker_angle - source_azimuth) * r_half_source_width, 2), xparam);
 		
 		else
@@ -132,7 +132,7 @@ void fill_spk_pos_array(double *array, long nspeakers, double offset)
 	double angle		= M_TWO_PI / nspeakers;
 	
 	for (long i = 0; i < nspeakers; i ++)
-		*array++ = (i - 1 + mod_offset) * angle;
+		*array++ = wrap_angle((i - 1 + mod_offset) * angle);
 }
 
 

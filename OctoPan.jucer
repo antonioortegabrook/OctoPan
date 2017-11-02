@@ -11,7 +11,7 @@
               pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="OctoPanAU"
               pluginRTASCategory="" aaxIdentifier="com.ortegabrook.OctoPan"
               pluginAAXCategory="AAX_ePlugInCategory_Spatialization" jucerVersion="5.2.0"
-              pluginAUMainType="" pluginVSTCategory="Spatialization" companyCopyright="">
+              pluginAUMainType="" pluginVSTCategory="" companyCopyright="">
   <MAINGROUP id="jORU6t" name="OctoPan">
     <GROUP id="{613EBCF3-C61D-BE37-18FD-3EC69E58887A}" name="Source">
       <GROUP id="{ACE4155D-6798-9F9B-BA72-F5ED53B04889}" name="AmplitudePanner">

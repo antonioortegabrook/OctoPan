@@ -22,7 +22,10 @@ SourceComponent::SourceComponent()
 	// In your constructor, you should add any child components, and
 	// initialise any special settings that your component needs.
 	
-//	getLookAndFeel().setDefaultSansSerifTypefaceName("Arial Narrow");
+	
+	Font labelFont = Font(Typeface::createSystemTypefaceFor(BinaryData::ITCFranklinGothicStdBkCd_otf,
+								BinaryData::ITCFranklinGothicStdBkCd_otfSize));
+	labelFont.setHeight(12);
 	
 	sectionTitle.setTitle("Source");
 	addAndMakeVisible(sectionTitle);
@@ -41,7 +44,7 @@ SourceComponent::SourceComponent()
 	azimuthLabel.setText("Azimuth", dontSendNotification);
 	azimuthLabel.setJustificationType(Justification::centredRight);
 	azimuthLabel.attachToComponent(&azimuthSlider, true);
-	azimuthLabel.setFont(Font::Font("Arial Narrow", "Regular", 13));
+	azimuthLabel.setFont(labelFont);
         azimuthLabel.Component::setColour(Label::textColourId, WHITE_TEXT_1);
 	azimuthLabel.setBorderSize(BorderSize<int> (0));
 	addAndMakeVisible(azimuthLabel);
@@ -59,7 +62,7 @@ SourceComponent::SourceComponent()
 	spreadLabel.setText("Spread", dontSendNotification);
 	spreadLabel.setJustificationType(Justification::centredRight);
 	spreadLabel.attachToComponent(&spreadSlider, true);
-	spreadLabel.setFont(Font::Font("Arial Narrow", "Regular", 13));
+	spreadLabel.setFont(labelFont);
         spreadLabel.Component::setColour(Label::textColourId, WHITE_TEXT_1);
 	spreadLabel.setBorderSize(BorderSize<int> (0));
 	addAndMakeVisible(spreadLabel);
@@ -76,7 +79,7 @@ SourceComponent::SourceComponent()
 	shapeLabel.setText("Shape", dontSendNotification);
 	shapeLabel.setJustificationType(Justification::centredRight);
 	shapeLabel.attachToComponent(&shapeSlider, true);
-	shapeLabel.setFont(Font::Font("Arial Narrow", "Regular", 13));
+	shapeLabel.setFont(labelFont);
 	shapeLabel.Component::setColour(Label::textColourId, WHITE_TEXT_1);
 	shapeLabel.setBorderSize(BorderSize<int> (0));
 	addAndMakeVisible(shapeLabel);

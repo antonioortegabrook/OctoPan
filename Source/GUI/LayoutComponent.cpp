@@ -24,11 +24,14 @@ LayoutComponent::LayoutComponent()
         
         offsetButton.setLookAndFeel(&checkBoxLookAndFeel);
         addAndMakeVisible(offsetButton);
-        
+	
+	Font franklinGothicCondensed = Font(Typeface::createSystemTypefaceFor(BinaryData::ITCFranklinGothicStdBkCd_otf, BinaryData::ITCFranklinGothicStdBkCd_otfSize));
+	franklinGothicCondensed.setHeight(12);
+	
         offsetLabel.setText("Offset", dontSendNotification);
         offsetLabel.setJustificationType(Justification::centredRight);
         offsetLabel.attachToComponent(&offsetButton, true);
-        offsetLabel.setFont(Font::Font("Arial Narrow", "Regular", 13));
+	offsetLabel.setFont(franklinGothicCondensed);
         offsetLabel.Component::setColour(Label::textColourId, WHITE_TEXT_1);
         offsetLabel.setBorderSize(BorderSize<int> (0));
         addAndMakeVisible(offsetLabel);

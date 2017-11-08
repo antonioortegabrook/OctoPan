@@ -27,7 +27,9 @@ public:
 	void setTitle(String);
 	
 private:
-	String title;
+	Font    titleFont;
+//	String  title;
+	AttributedString title;
 	
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SectionTitleComponent)
 };

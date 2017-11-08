@@ -60,8 +60,11 @@ public:
 	Label* createSliderTextBox(Slider& slider) override
         {
                 Label *label = LookAndFeel_V4::createSliderTextBox (slider);
+		
+		Font franklinGothicCondensed = Font(Typeface::createSystemTypefaceFor(BinaryData::ITCFranklinGothicStdBkCp_otf, BinaryData::ITCFranklinGothicStdBkCp_otfSize));
+		franklinGothicCondensed.setHeight(11);
                 
-                label->setFont(Font::Font("Arial Narrow", "Regular", 13));
+                label->setFont(franklinGothicCondensed);
                 label->setBorderSize(BorderSize<int> (0));
                 label->setJustificationType(Justification::centredLeft);
                 

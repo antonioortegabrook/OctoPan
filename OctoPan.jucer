@@ -21,6 +21,16 @@
               file="Source/angular_panning/angular_panning.h"/>
       </GROUP>
       <GROUP id="{40EF9A7B-8A52-50CD-2CD1-48CDCF1A3B7A}" name="Res">
+        <FILE id="JHPTzF" name="ITCFranklinGothicStd-Book.otf" compile="0"
+              resource="1" file="../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-Book.otf"/>
+        <FILE id="FUGLdp" name="ITCFranklinGothicStd-Med.otf" compile="0" resource="1"
+              file="../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-Med.otf"/>
+        <FILE id="nzb7GS" name="ITCFranklinGothicStd-BkCp.otf" compile="0"
+              resource="1" file="../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-BkCp.otf"/>
+        <FILE id="Z44ylr" name="ITCFranklinGothicStd-BkCd.otf" compile="0"
+              resource="1" file="../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-BkCd.otf"/>
+        <FILE id="aEs7Nv" name="ITCFranklinGothicStd-BkXCp.otf" compile="0"
+              resource="1" file="../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-BkXCp.otf"/>
         <FILE id="AFe7Gj" name="dims.h" compile="0" resource="0" file="Source/GUI/dims.h"/>
         <FILE id="fVlpJF" name="AstColours.h" compile="0" resource="0" file="Source/GUI/AstColours.h"/>
         <FILE id="zC46Px" name="ast_colours.h" compile="0" resource="0" file="Source/GUI/ast_colours.h"/>
@@ -113,7 +123,8 @@
         <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <VS2017 targetFolder="Builds/VisualStudio2017">
+    <VS2017 targetFolder="Builds/VisualStudio2017" vst3Folder="" aaxFolder=""
+            windowsTargetPlatformVersion="10.0.16299.0">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
                        debugInformationFormat="ProgramDatabase" enablePluginBinaryCopyStep="0"
@@ -140,6 +151,31 @@
         <MODULEPATH id="juce_audio_basics" path="..\JUCE\modules"/>
       </MODULEPATHS>
     </VS2017>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" linkTimeOptimisation="0"
+                       targetName="OctoPan"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" linkTimeOptimisation="1"
+                       targetName="OctoPan"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_video" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>

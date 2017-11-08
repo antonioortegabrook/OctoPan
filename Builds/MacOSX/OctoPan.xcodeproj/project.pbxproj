@@ -37,6 +37,7 @@
 		1EA0F2F9F35A2F361A1624C7 /* include_juce_audio_plugin_client_AAX.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2F164F75B57BC416DE8580 /* include_juce_audio_plugin_client_AAX.mm */; };
 		375D226F8B45DC94D6ABB3EE /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
 		37BCDDD56A04899F527EE5B3 /* AstSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC7A322775648EF9B1231C4A /* AstSlider.cpp */; };
+		37FA5390972DC8469D6E600A /* BinaryData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C8D7315EB22CE17242FCC /* BinaryData.cpp */; };
 		392AAA6D8EAD85957DD6FC66 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
 		3DE3C1132FBAE878F45DC08C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
 		3EE56604219A61C97F34FC67 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
@@ -67,67 +68,67 @@
 		AD5A1D68AD0270F4432B85CB /* PluginProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C772DA99E89F1B429E77BE2 /* PluginProcessor.cpp */; };
 		B652D8DEC36AA732AD5E6636 /* include_juce_audio_devices.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB3D428AD1CE532ED7401141 /* include_juce_audio_devices.mm */; };
 		BE2EC2BA8EABA95456864084 /* include_juce_core.mm in Sources */ = {isa = PBXBuildFile; fileRef = B85F7158745417F62A44DAD5 /* include_juce_core.mm */; };
-		C088FEBA1FAB965C009190B7 /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = C534F11D97A753E3BC898DA8 /* RecentFilesMenuTemplate.nib */; };
-		C088FEBB1FAB965C009190B7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
-		C088FEBC1FAB965C009190B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
-		C088FEBD1FAB965C009190B7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
-		C088FEBE1FAB965C009190B7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
-		C088FEBF1FAB965C009190B7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
-		C088FEC01FAB965C009190B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
-		C088FEC11FAB965C009190B7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
-		C088FEC21FAB965C009190B7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
-		C088FEC31FAB965C009190B7 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
-		C088FEC41FAB965C009190B7 /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
-		C088FEC51FAB965C009190B7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
-		C088FEC61FAB965C009190B7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
-		C088FEC71FAB965C009190B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
-		C088FEC81FAB965C009190B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
-		C088FEC91FAB965C009190B7 /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = C534F11D97A753E3BC898DA8 /* RecentFilesMenuTemplate.nib */; };
-		C088FECA1FAB965C009190B7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
-		C088FECB1FAB965C009190B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
-		C088FECC1FAB965C009190B7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
-		C088FECD1FAB965C009190B7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
-		C088FECE1FAB965C009190B7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
-		C088FECF1FAB965C009190B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
-		C088FED01FAB965C009190B7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
-		C088FED11FAB965C009190B7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
-		C088FED21FAB965C009190B7 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
-		C088FED31FAB965C009190B7 /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
-		C088FED41FAB965C009190B7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
-		C088FED51FAB965C009190B7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
-		C088FED61FAB965C009190B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
-		C088FED71FAB965C009190B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
-		C088FED81FAB965C009190B7 /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = C534F11D97A753E3BC898DA8 /* RecentFilesMenuTemplate.nib */; };
-		C088FED91FAB965C009190B7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
-		C088FEDA1FAB965C009190B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
-		C088FEDB1FAB965C009190B7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
-		C088FEDC1FAB965C009190B7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
-		C088FEDD1FAB965C009190B7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
-		C088FEDE1FAB965C009190B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
-		C088FEDF1FAB965C009190B7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
-		C088FEE01FAB965C009190B7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
-		C088FEE11FAB965C009190B7 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
-		C088FEE21FAB965C009190B7 /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
-		C088FEE31FAB965C009190B7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
-		C088FEE41FAB965C009190B7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
-		C088FEE51FAB965C009190B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
-		C088FEE61FAB965C009190B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
-		C088FEE71FAB965C009190B7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
-		C088FEE81FAB965C009190B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
-		C088FEE91FAB965C009190B7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46BA78CA6FE26262E069CD /* AudioUnit.framework */; };
-		C088FEEA1FAB965C009190B7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
-		C088FEEB1FAB965C009190B7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
-		C088FEEC1FAB965C009190B7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
-		C088FEED1FAB965C009190B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
-		C088FEEE1FAB965C009190B7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
-		C088FEEF1FAB965C009190B7 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC4195077AAFE823E3176AB /* CoreAudioKit.framework */; };
-		C088FEF01FAB965C009190B7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
-		C088FEF11FAB965C009190B7 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
-		C088FEF21FAB965C009190B7 /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
-		C088FEF31FAB965C009190B7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
-		C088FEF41FAB965C009190B7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
-		C088FEF51FAB965C009190B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
-		C088FEF61FAB965C009190B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
+		C00CBC6F1FB146FC00112B8B /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = C534F11D97A753E3BC898DA8 /* RecentFilesMenuTemplate.nib */; };
+		C00CBC701FB146FC00112B8B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
+		C00CBC711FB146FC00112B8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
+		C00CBC721FB146FC00112B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
+		C00CBC731FB146FC00112B8B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
+		C00CBC741FB146FC00112B8B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
+		C00CBC751FB146FC00112B8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
+		C00CBC761FB146FC00112B8B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
+		C00CBC771FB146FC00112B8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
+		C00CBC781FB146FC00112B8B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
+		C00CBC791FB146FC00112B8B /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
+		C00CBC7A1FB146FC00112B8B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
+		C00CBC7B1FB146FC00112B8B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
+		C00CBC7C1FB146FC00112B8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
+		C00CBC7D1FB146FC00112B8B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
+		C00CBC7E1FB146FC00112B8B /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = C534F11D97A753E3BC898DA8 /* RecentFilesMenuTemplate.nib */; };
+		C00CBC7F1FB146FC00112B8B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
+		C00CBC801FB146FC00112B8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
+		C00CBC811FB146FC00112B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
+		C00CBC821FB146FC00112B8B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
+		C00CBC831FB146FC00112B8B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
+		C00CBC841FB146FC00112B8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
+		C00CBC851FB146FC00112B8B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
+		C00CBC861FB146FC00112B8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
+		C00CBC871FB146FC00112B8B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
+		C00CBC881FB146FC00112B8B /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
+		C00CBC891FB146FC00112B8B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
+		C00CBC8A1FB146FC00112B8B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
+		C00CBC8B1FB146FC00112B8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
+		C00CBC8C1FB146FC00112B8B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
+		C00CBC8D1FB146FC00112B8B /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = C534F11D97A753E3BC898DA8 /* RecentFilesMenuTemplate.nib */; };
+		C00CBC8E1FB146FC00112B8B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
+		C00CBC8F1FB146FC00112B8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
+		C00CBC901FB146FC00112B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
+		C00CBC911FB146FC00112B8B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
+		C00CBC921FB146FC00112B8B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
+		C00CBC931FB146FC00112B8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
+		C00CBC941FB146FC00112B8B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
+		C00CBC951FB146FC00112B8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
+		C00CBC961FB146FC00112B8B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
+		C00CBC971FB146FC00112B8B /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
+		C00CBC981FB146FC00112B8B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
+		C00CBC991FB146FC00112B8B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
+		C00CBC9A1FB146FC00112B8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
+		C00CBC9B1FB146FC00112B8B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
+		C00CBC9C1FB146FC00112B8B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395100235398E36EBA0F7778 /* Accelerate.framework */; };
+		C00CBC9D1FB146FC00112B8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
+		C00CBC9E1FB146FC00112B8B /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46BA78CA6FE26262E069CD /* AudioUnit.framework */; };
+		C00CBC9F1FB146FC00112B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EF0E11EA3942743DD65593 /* AVFoundation.framework */; };
+		C00CBCA01FB146FC00112B8B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA97F4865ED1E79919C236B /* AVKit.framework */; };
+		C00CBCA11FB146FC00112B8B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D64B8832F4A6A5E9E427EC9 /* Carbon.framework */; };
+		C00CBCA21FB146FC00112B8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD82507EB711B68B049E67D /* Cocoa.framework */; };
+		C00CBCA31FB146FC00112B8B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D1D6B174D9A803F57EB9EB /* CoreAudio.framework */; };
+		C00CBCA41FB146FC00112B8B /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC4195077AAFE823E3176AB /* CoreAudioKit.framework */; };
+		C00CBCA51FB146FC00112B8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C0D38F534E39B3E7100A5 /* CoreMedia.framework */; };
+		C00CBCA61FB146FC00112B8B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954A96A01EB95B49F72920 /* CoreMIDI.framework */; };
+		C00CBCA71FB146FC00112B8B /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09E22A0563F9E85BE1924 /* DiscRecording.framework */; };
+		C00CBCA81FB146FC00112B8B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23DE06067E5D50939BF83F6 /* IOKit.framework */; };
+		C00CBCA91FB146FC00112B8B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */; };
+		C00CBCAA1FB146FC00112B8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A009E7649CA28A02D491BBF /* QuartzCore.framework */; };
+		C00CBCAB1FB146FC00112B8B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3293F7C44AE349FE16DBD1B /* WebKit.framework */; };
 		C4B8EBB970E8D12264712D30 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */; };
 		C94ADCA67BE7A0153C6A35B4 /* include_juce_opengl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FFCE75C44199D2E33EDB7A6 /* include_juce_opengl.mm */; };
 		CCCA806D222ADE4DF8A63A6E /* include_juce_audio_plugin_client_AU_1.mm in Sources */ = {isa = PBXBuildFile; fileRef = B2D32416F2E0135F9FC1EB85 /* include_juce_audio_plugin_client_AU_1.mm */; };
@@ -141,42 +142,42 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C088FEF71FAB965D009190B7 /* PBXContainerItemProxy */ = {
+		C00CBCAC1FB146FD00112B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 768ABE8690FDE1691237527D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 74489A33B956763FB9E5A8C3;
 			remoteInfo = "OctoPan - Shared Code";
 		};
-		C088FEF81FAB965E009190B7 /* PBXContainerItemProxy */ = {
+		C00CBCAD1FB146FF00112B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 768ABE8690FDE1691237527D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C570D2389EF991BFD14CE31C;
 			remoteInfo = "OctoPan - VST";
 		};
-		C088FEF91FAB965E009190B7 /* PBXContainerItemProxy */ = {
+		C00CBCAE1FB146FF00112B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 768ABE8690FDE1691237527D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D19D8076B9A0F47F97C0FAC6;
 			remoteInfo = "OctoPan - VST3";
 		};
-		C088FEFA1FAB965E009190B7 /* PBXContainerItemProxy */ = {
+		C00CBCAF1FB146FF00112B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 768ABE8690FDE1691237527D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CCDEEA800A1F38D3296A6DE9;
 			remoteInfo = "OctoPan - AAX";
 		};
-		C088FEFB1FAB965E009190B7 /* PBXContainerItemProxy */ = {
+		C00CBCB01FB146FF00112B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 768ABE8690FDE1691237527D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 02802D713458DE091FCF594C;
 			remoteInfo = "OctoPan - AU";
 		};
-		C088FEFC1FAB965E009190B7 /* PBXContainerItemProxy */ = {
+		C00CBCB11FB146FF00112B8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 768ABE8690FDE1691237527D /* Project object */;
 			proxyType = 1;
@@ -201,6 +202,7 @@
 		2722994DF2A1B9A4899856E1 /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_audio_utils; path = ../../../JUCE/modules/juce_audio_utils; sourceTree = SOURCE_ROOT; };
 		28059FF30C3B2258B4F87424 /* PannerComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PannerComponent.h; path = ../../Source/GUI/PannerComponent.h; sourceTree = SOURCE_ROOT; };
 		2CD9F86942866F586B728601 /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_audio_devices; path = ../../../JUCE/modules/juce_audio_devices; sourceTree = SOURCE_ROOT; };
+		2D23D52A6F973C7D3BEAE559 /* ITCFranklinGothicStd-BkCd.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "ITCFranklinGothicStd-BkCd.otf"; path = "../../../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-BkCd.otf"; sourceTree = SOURCE_ROOT; };
 		2DEFDDE3A0F652A771296258 /* LayoutComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LayoutComponent.cpp; path = ../../Source/GUI/LayoutComponent.cpp; sourceTree = SOURCE_ROOT; };
 		303F787B770DA809CC384763 /* OctoPan.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OctoPan.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3090F567BAC2C394E9777881 /* include_juce_cryptography.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_cryptography.mm; path = ../../JuceLibraryCode/include_juce_cryptography.mm; sourceTree = SOURCE_ROOT; };
@@ -215,8 +217,10 @@
 		4345A6369FB02A85DA2A501A /* OctoPan.vst */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OctoPan.vst; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C772DA99E89F1B429E77BE2 /* PluginProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginProcessor.cpp; path = ../../Source/PluginProcessor.cpp; sourceTree = SOURCE_ROOT; };
 		4CA97F4865ED1E79919C236B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		53445B7A9C099D82D65B60B6 /* ITCFranklinGothicStd-Med.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "ITCFranklinGothicStd-Med.otf"; path = "../../../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-Med.otf"; sourceTree = SOURCE_ROOT; };
 		53FE50D8BCA9701D04E4E626 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5794932F5E77A89EBA0B0912 /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
+		591945EDF953295B00F54851 /* ITCFranklinGothicStd-BkXCp.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "ITCFranklinGothicStd-BkXCp.otf"; path = "../../../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-BkXCp.otf"; sourceTree = SOURCE_ROOT; };
 		59470A1D3D36C86A0282BE80 /* Info-VST.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-VST.plist"; sourceTree = SOURCE_ROOT; };
 		5997D12191452DDE851FB757 /* angular_panning.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = angular_panning.c; path = ../../Source/angular_panning/angular_panning.c; sourceTree = SOURCE_ROOT; };
 		5FFCE75C44199D2E33EDB7A6 /* include_juce_opengl.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_opengl.mm; path = ../../JuceLibraryCode/include_juce_opengl.mm; sourceTree = SOURCE_ROOT; };
@@ -239,6 +243,7 @@
 		947636F17AE1100F630E916B /* Info-VST3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-VST3.plist"; sourceTree = SOURCE_ROOT; };
 		96A7811763E306173014B0B4 /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_graphics; path = ../../../JUCE/modules/juce_graphics; sourceTree = SOURCE_ROOT; };
 		9B8E514325ED36A94F0FBCC2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		9D0C8D7315EB22CE17242FCC /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
 		9DD82507EB711B68B049E67D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9E4497E57976AED14D5B5AE8 /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_data_structures; path = ../../../JUCE/modules/juce_data_structures; sourceTree = SOURCE_ROOT; };
 		A0EF68DD8CD86CC7654016AA /* include_juce_audio_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_basics.mm; path = ../../JuceLibraryCode/include_juce_audio_basics.mm; sourceTree = SOURCE_ROOT; };
@@ -255,6 +260,7 @@
 		B85F7158745417F62A44DAD5 /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		B8AB668E5C7F005B1AE3AE4C /* LayoutComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LayoutComponent.h; path = ../../Source/GUI/LayoutComponent.h; sourceTree = SOURCE_ROOT; };
 		BAC202A0EA5A8CB476B28771 /* include_juce_audio_plugin_client_VST2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_VST2.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST2.cpp; sourceTree = SOURCE_ROOT; };
+		BD625836CC0838D6FBA611A6 /* BinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = SOURCE_ROOT; };
 		BF2F164F75B57BC416DE8580 /* include_juce_audio_plugin_client_AAX.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_AAX.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AAX.mm; sourceTree = SOURCE_ROOT; };
 		BF976FDE2629A2C847A2254B /* AstSliderLookAndFeel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AstSliderLookAndFeel.h; path = ../../Source/GUI/AstSliderLookAndFeel.h; sourceTree = SOURCE_ROOT; };
 		C3293F7C44AE349FE16DBD1B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -271,8 +277,10 @@
 		DD954A96A01EB95B49F72920 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		DE158BA6B57C7459702FC30B /* PluginEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = SOURCE_ROOT; };
 		E09516EAA302B11953A956B2 /* TitleComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TitleComponent.h; path = ../../Source/GUI/TitleComponent.h; sourceTree = SOURCE_ROOT; };
+		E47456D58A50BACC211E3331 /* ITCFranklinGothicStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "ITCFranklinGothicStd-Book.otf"; path = "../../../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-Book.otf"; sourceTree = SOURCE_ROOT; };
 		E685AA41C562D47F113B9394 /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		E82BAA54678B4578F6AB9EE8 /* PanDialComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PanDialComponent.cpp; path = ../../Source/GUI/PanDialComponent.cpp; sourceTree = SOURCE_ROOT; };
+		E8F1D335F8DB68772EE4BCDC /* ITCFranklinGothicStd-BkCp.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "ITCFranklinGothicStd-BkCp.otf"; path = "../../../Fonts/itc-franklin-gothic-std/ITCFranklinGothicStd-BkCp.otf"; sourceTree = SOURCE_ROOT; };
 		E9FADAA7C380A994860823B5 /* juce_cryptography */ = {isa = PBXFileReference; lastKnownFileType = text; name = juce_cryptography; path = ../../../JUCE/modules/juce_cryptography; sourceTree = SOURCE_ROOT; };
 		EC70FFE341B11DB61963BB14 /* include_juce_audio_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_utils.mm; sourceTree = SOURCE_ROOT; };
 		EEC4195077AAFE823E3176AB /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
@@ -291,20 +299,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FEBB1FAB965C009190B7 /* Accelerate.framework in Frameworks */,
-				C088FEBC1FAB965C009190B7 /* AudioToolbox.framework in Frameworks */,
-				C088FEBD1FAB965C009190B7 /* AVFoundation.framework in Frameworks */,
-				C088FEBE1FAB965C009190B7 /* AVKit.framework in Frameworks */,
-				C088FEBF1FAB965C009190B7 /* Carbon.framework in Frameworks */,
-				C088FEC01FAB965C009190B7 /* Cocoa.framework in Frameworks */,
-				C088FEC11FAB965C009190B7 /* CoreAudio.framework in Frameworks */,
-				C088FEC21FAB965C009190B7 /* CoreMedia.framework in Frameworks */,
-				C088FEC31FAB965C009190B7 /* CoreMIDI.framework in Frameworks */,
-				C088FEC41FAB965C009190B7 /* DiscRecording.framework in Frameworks */,
-				C088FEC51FAB965C009190B7 /* IOKit.framework in Frameworks */,
-				C088FEC61FAB965C009190B7 /* OpenGL.framework in Frameworks */,
-				C088FEC71FAB965C009190B7 /* QuartzCore.framework in Frameworks */,
-				C088FEC81FAB965C009190B7 /* WebKit.framework in Frameworks */,
+				C00CBC701FB146FC00112B8B /* Accelerate.framework in Frameworks */,
+				C00CBC711FB146FC00112B8B /* AudioToolbox.framework in Frameworks */,
+				C00CBC721FB146FC00112B8B /* AVFoundation.framework in Frameworks */,
+				C00CBC731FB146FC00112B8B /* AVKit.framework in Frameworks */,
+				C00CBC741FB146FC00112B8B /* Carbon.framework in Frameworks */,
+				C00CBC751FB146FC00112B8B /* Cocoa.framework in Frameworks */,
+				C00CBC761FB146FC00112B8B /* CoreAudio.framework in Frameworks */,
+				C00CBC771FB146FC00112B8B /* CoreMedia.framework in Frameworks */,
+				C00CBC781FB146FC00112B8B /* CoreMIDI.framework in Frameworks */,
+				C00CBC791FB146FC00112B8B /* DiscRecording.framework in Frameworks */,
+				C00CBC7A1FB146FC00112B8B /* IOKit.framework in Frameworks */,
+				C00CBC7B1FB146FC00112B8B /* OpenGL.framework in Frameworks */,
+				C00CBC7C1FB146FC00112B8B /* QuartzCore.framework in Frameworks */,
+				C00CBC7D1FB146FC00112B8B /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,22 +320,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FEE71FAB965C009190B7 /* Accelerate.framework in Frameworks */,
-				C088FEE81FAB965C009190B7 /* AudioToolbox.framework in Frameworks */,
-				C088FEE91FAB965C009190B7 /* AudioUnit.framework in Frameworks */,
-				C088FEEA1FAB965C009190B7 /* AVFoundation.framework in Frameworks */,
-				C088FEEB1FAB965C009190B7 /* AVKit.framework in Frameworks */,
-				C088FEEC1FAB965C009190B7 /* Carbon.framework in Frameworks */,
-				C088FEED1FAB965C009190B7 /* Cocoa.framework in Frameworks */,
-				C088FEEE1FAB965C009190B7 /* CoreAudio.framework in Frameworks */,
-				C088FEEF1FAB965C009190B7 /* CoreAudioKit.framework in Frameworks */,
-				C088FEF01FAB965C009190B7 /* CoreMedia.framework in Frameworks */,
-				C088FEF11FAB965C009190B7 /* CoreMIDI.framework in Frameworks */,
-				C088FEF21FAB965C009190B7 /* DiscRecording.framework in Frameworks */,
-				C088FEF31FAB965C009190B7 /* IOKit.framework in Frameworks */,
-				C088FEF41FAB965C009190B7 /* OpenGL.framework in Frameworks */,
-				C088FEF51FAB965C009190B7 /* QuartzCore.framework in Frameworks */,
-				C088FEF61FAB965C009190B7 /* WebKit.framework in Frameworks */,
+				C00CBC9C1FB146FC00112B8B /* Accelerate.framework in Frameworks */,
+				C00CBC9D1FB146FC00112B8B /* AudioToolbox.framework in Frameworks */,
+				C00CBC9E1FB146FC00112B8B /* AudioUnit.framework in Frameworks */,
+				C00CBC9F1FB146FC00112B8B /* AVFoundation.framework in Frameworks */,
+				C00CBCA01FB146FC00112B8B /* AVKit.framework in Frameworks */,
+				C00CBCA11FB146FC00112B8B /* Carbon.framework in Frameworks */,
+				C00CBCA21FB146FC00112B8B /* Cocoa.framework in Frameworks */,
+				C00CBCA31FB146FC00112B8B /* CoreAudio.framework in Frameworks */,
+				C00CBCA41FB146FC00112B8B /* CoreAudioKit.framework in Frameworks */,
+				C00CBCA51FB146FC00112B8B /* CoreMedia.framework in Frameworks */,
+				C00CBCA61FB146FC00112B8B /* CoreMIDI.framework in Frameworks */,
+				C00CBCA71FB146FC00112B8B /* DiscRecording.framework in Frameworks */,
+				C00CBCA81FB146FC00112B8B /* IOKit.framework in Frameworks */,
+				C00CBCA91FB146FC00112B8B /* OpenGL.framework in Frameworks */,
+				C00CBCAA1FB146FC00112B8B /* QuartzCore.framework in Frameworks */,
+				C00CBCAB1FB146FC00112B8B /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,20 +364,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FECA1FAB965C009190B7 /* Accelerate.framework in Frameworks */,
-				C088FECB1FAB965C009190B7 /* AudioToolbox.framework in Frameworks */,
-				C088FECC1FAB965C009190B7 /* AVFoundation.framework in Frameworks */,
-				C088FECD1FAB965C009190B7 /* AVKit.framework in Frameworks */,
-				C088FECE1FAB965C009190B7 /* Carbon.framework in Frameworks */,
-				C088FECF1FAB965C009190B7 /* Cocoa.framework in Frameworks */,
-				C088FED01FAB965C009190B7 /* CoreAudio.framework in Frameworks */,
-				C088FED11FAB965C009190B7 /* CoreMedia.framework in Frameworks */,
-				C088FED21FAB965C009190B7 /* CoreMIDI.framework in Frameworks */,
-				C088FED31FAB965C009190B7 /* DiscRecording.framework in Frameworks */,
-				C088FED41FAB965C009190B7 /* IOKit.framework in Frameworks */,
-				C088FED51FAB965C009190B7 /* OpenGL.framework in Frameworks */,
-				C088FED61FAB965C009190B7 /* QuartzCore.framework in Frameworks */,
-				C088FED71FAB965C009190B7 /* WebKit.framework in Frameworks */,
+				C00CBC7F1FB146FC00112B8B /* Accelerate.framework in Frameworks */,
+				C00CBC801FB146FC00112B8B /* AudioToolbox.framework in Frameworks */,
+				C00CBC811FB146FC00112B8B /* AVFoundation.framework in Frameworks */,
+				C00CBC821FB146FC00112B8B /* AVKit.framework in Frameworks */,
+				C00CBC831FB146FC00112B8B /* Carbon.framework in Frameworks */,
+				C00CBC841FB146FC00112B8B /* Cocoa.framework in Frameworks */,
+				C00CBC851FB146FC00112B8B /* CoreAudio.framework in Frameworks */,
+				C00CBC861FB146FC00112B8B /* CoreMedia.framework in Frameworks */,
+				C00CBC871FB146FC00112B8B /* CoreMIDI.framework in Frameworks */,
+				C00CBC881FB146FC00112B8B /* DiscRecording.framework in Frameworks */,
+				C00CBC891FB146FC00112B8B /* IOKit.framework in Frameworks */,
+				C00CBC8A1FB146FC00112B8B /* OpenGL.framework in Frameworks */,
+				C00CBC8B1FB146FC00112B8B /* QuartzCore.framework in Frameworks */,
+				C00CBC8C1FB146FC00112B8B /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,22 +385,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FED91FAB965C009190B7 /* Accelerate.framework in Frameworks */,
-				C088FEDA1FAB965C009190B7 /* AudioToolbox.framework in Frameworks */,
+				C00CBC8E1FB146FC00112B8B /* Accelerate.framework in Frameworks */,
+				C00CBC8F1FB146FC00112B8B /* AudioToolbox.framework in Frameworks */,
 				14E01D908D1C202C8E743654 /* AudioUnit.framework in Frameworks */,
-				C088FEDB1FAB965C009190B7 /* AVFoundation.framework in Frameworks */,
-				C088FEDC1FAB965C009190B7 /* AVKit.framework in Frameworks */,
-				C088FEDD1FAB965C009190B7 /* Carbon.framework in Frameworks */,
-				C088FEDE1FAB965C009190B7 /* Cocoa.framework in Frameworks */,
-				C088FEDF1FAB965C009190B7 /* CoreAudio.framework in Frameworks */,
+				C00CBC901FB146FC00112B8B /* AVFoundation.framework in Frameworks */,
+				C00CBC911FB146FC00112B8B /* AVKit.framework in Frameworks */,
+				C00CBC921FB146FC00112B8B /* Carbon.framework in Frameworks */,
+				C00CBC931FB146FC00112B8B /* Cocoa.framework in Frameworks */,
+				C00CBC941FB146FC00112B8B /* CoreAudio.framework in Frameworks */,
 				911D65AF70B3B110B94F8F90 /* CoreAudioKit.framework in Frameworks */,
-				C088FEE01FAB965C009190B7 /* CoreMedia.framework in Frameworks */,
-				C088FEE11FAB965C009190B7 /* CoreMIDI.framework in Frameworks */,
-				C088FEE21FAB965C009190B7 /* DiscRecording.framework in Frameworks */,
-				C088FEE31FAB965C009190B7 /* IOKit.framework in Frameworks */,
-				C088FEE41FAB965C009190B7 /* OpenGL.framework in Frameworks */,
-				C088FEE51FAB965C009190B7 /* QuartzCore.framework in Frameworks */,
-				C088FEE61FAB965C009190B7 /* WebKit.framework in Frameworks */,
+				C00CBC951FB146FC00112B8B /* CoreMedia.framework in Frameworks */,
+				C00CBC961FB146FC00112B8B /* CoreMIDI.framework in Frameworks */,
+				C00CBC971FB146FC00112B8B /* DiscRecording.framework in Frameworks */,
+				C00CBC981FB146FC00112B8B /* IOKit.framework in Frameworks */,
+				C00CBC991FB146FC00112B8B /* OpenGL.framework in Frameworks */,
+				C00CBC9A1FB146FC00112B8B /* QuartzCore.framework in Frameworks */,
+				C00CBC9B1FB146FC00112B8B /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +538,8 @@
 			isa = PBXGroup;
 			children = (
 				A904C59F21981885FA8FD0E7 /* AppConfig.h */,
+				9D0C8D7315EB22CE17242FCC /* BinaryData.cpp */,
+				BD625836CC0838D6FBA611A6 /* BinaryData.h */,
 				A0EF68DD8CD86CC7654016AA /* include_juce_audio_basics.mm */,
 				CB3D428AD1CE532ED7401141 /* include_juce_audio_devices.mm */,
 				AA1D71FB2B2B7329B16142B7 /* include_juce_audio_formats.mm */,
@@ -615,6 +625,11 @@
 		F3478B85D6CD3CB28E2CFBB0 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				E47456D58A50BACC211E3331 /* ITCFranklinGothicStd-Book.otf */,
+				53445B7A9C099D82D65B60B6 /* ITCFranklinGothicStd-Med.otf */,
+				E8F1D335F8DB68772EE4BCDC /* ITCFranklinGothicStd-BkCp.otf */,
+				2D23D52A6F973C7D3BEAE559 /* ITCFranklinGothicStd-BkCd.otf */,
+				591945EDF953295B00F54851 /* ITCFranklinGothicStd-BkXCp.otf */,
 				13A83BF7B7CC7BFD0FF04C93 /* dims.h */,
 				A9CA65E5A5BCB934EDB4C4D3 /* AstColours.h */,
 				34424594ECFAA66DE1E05E53 /* ast_colours.h */,
@@ -921,7 +936,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FEBA1FAB965C009190B7 /* RecentFilesMenuTemplate.nib in Resources */,
+				C00CBC6F1FB146FC00112B8B /* RecentFilesMenuTemplate.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,7 +952,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FED81FAB965C009190B7 /* RecentFilesMenuTemplate.nib in Resources */,
+				C00CBC8D1FB146FC00112B8B /* RecentFilesMenuTemplate.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,7 +960,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C088FEC91FAB965C009190B7 /* RecentFilesMenuTemplate.nib in Resources */,
+				C00CBC7E1FB146FC00112B8B /* RecentFilesMenuTemplate.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1034,7 @@
 				E194F69C10FBA95E2CA4CF3B /* PanDialComponent.cpp in Sources */,
 				AD5A1D68AD0270F4432B85CB /* PluginProcessor.cpp in Sources */,
 				56CF31279C970ED9B631FFB9 /* PluginEditor.cpp in Sources */,
+				37FA5390972DC8469D6E600A /* BinaryData.cpp in Sources */,
 				67822FC7DB8D45715349DFFF /* include_juce_audio_basics.mm in Sources */,
 				B652D8DEC36AA732AD5E6636 /* include_juce_audio_devices.mm in Sources */,
 				5D53B3B287DABBE7CCBB46D8 /* include_juce_audio_formats.mm in Sources */,
@@ -1044,32 +1060,32 @@
 		2C83504E38BD230A3B1052E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C1A2AA4B075C2CC9C25E306E /* OctoPan - AUv3 AppExtension */;
-			targetProxy = C088FEFC1FAB965E009190B7 /* PBXContainerItemProxy */;
+			targetProxy = C00CBCB11FB146FF00112B8B /* PBXContainerItemProxy */;
 		};
 		6F42F2BFA8C65C76BCD67FD5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D19D8076B9A0F47F97C0FAC6 /* OctoPan - VST3 */;
-			targetProxy = C088FEF91FAB965E009190B7 /* PBXContainerItemProxy */;
+			targetProxy = C00CBCAE1FB146FF00112B8B /* PBXContainerItemProxy */;
 		};
 		A668408152675C82025F08F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C570D2389EF991BFD14CE31C /* OctoPan - VST */;
-			targetProxy = C088FEF81FAB965E009190B7 /* PBXContainerItemProxy */;
+			targetProxy = C00CBCAD1FB146FF00112B8B /* PBXContainerItemProxy */;
 		};
 		C39252ADBA7CA303011B8647 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 02802D713458DE091FCF594C /* OctoPan - AU */;
-			targetProxy = C088FEFB1FAB965E009190B7 /* PBXContainerItemProxy */;
+			targetProxy = C00CBCB01FB146FF00112B8B /* PBXContainerItemProxy */;
 		};
 		E6644730097904386C4D476D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CCDEEA800A1F38D3296A6DE9 /* OctoPan - AAX */;
-			targetProxy = C088FEFA1FAB965E009190B7 /* PBXContainerItemProxy */;
+			targetProxy = C00CBCAF1FB146FF00112B8B /* PBXContainerItemProxy */;
 		};
 		FDA1DE6AA236A4585ADCE574 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 74489A33B956763FB9E5A8C3 /* OctoPan - Shared Code */;
-			targetProxy = C088FEF71FAB965D009190B7 /* PBXContainerItemProxy */;
+			targetProxy = C00CBCAC1FB146FD00112B8B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1130,7 +1146,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = aaxplugin;
 			};
 			name = Release;
@@ -1179,7 +1195,7 @@
 				OTHER_LDFLAGS = "-lOctoPan";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan.OctoPanAUv3;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 			};
 			name = Debug;
 		};
@@ -1275,7 +1291,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = vst;
 			};
 			name = Release;
@@ -1335,7 +1351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = aaxplugin;
 			};
 			name = Debug;
@@ -1397,7 +1413,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = vst3;
 			};
 			name = Debug;
@@ -1447,7 +1463,7 @@
 				OTHER_LDFLAGS = "-lOctoPan";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan.OctoPanAUv3;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 			};
 			name = Release;
 		};
@@ -1502,7 +1518,7 @@
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = component;
 			};
 			name = Debug;
@@ -1565,7 +1581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = vst3;
 			};
 			name = Release;
@@ -1665,7 +1681,7 @@
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = component;
 			};
 			name = Release;
@@ -1720,7 +1736,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 				WRAPPER_EXTENSION = vst;
 			};
 			name = Debug;
@@ -1767,7 +1783,7 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 			};
 			name = Release;
 		};
@@ -1812,7 +1828,7 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ortegabrook.OctoPan;
 				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
+				USE_HEADERMAP = YES;
 			};
 			name = Debug;
 		};

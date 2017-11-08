@@ -19,11 +19,15 @@ SectionTitleComponent::SectionTitleComponent()
 	// In your constructor, you should add any child components, and
 	// initialise any special settings that your component needs.
 	
+    titleFont = Font(Typeface::createSystemTypefaceFor(BinaryData::ITCFranklinGothicStdBook_otf,
+						       BinaryData::ITCFranklinGothicStdBook_otfSize));
+    titleFont.setHeight(13);
 }
 
 SectionTitleComponent::~SectionTitleComponent()
 {
-	title = "";
+//	title = "";
+	title.setText("");
 }
 
 void SectionTitleComponent::paint (Graphics& g)
@@ -40,8 +44,12 @@ void SectionTitleComponent::paint (Graphics& g)
 	g.setColour(GREY_BACKGROUND);
 	g.fillRoundedRectangle(area, ROUNDNESS);
 	
-	g.setColour(WHITE_TEXT_1);
-	g.drawText(title, area.reduced(SPACING), Justification::centredLeft);
+	title.setFont(titleFont);
+	title.setJustification(Justification::centredLeft);
+	title.setWordWrap(juce::AttributedString::none);
+	title.setColour(WHITE_TEXT_1);
+	
+	title.draw(g, area.reduced(SPACING, 0));
 }
 
 void SectionTitleComponent::resized()
@@ -53,5 +61,6 @@ void SectionTitleComponent::resized()
 
 void SectionTitleComponent::setTitle(juce::String newTitle)
 {
-	title = newTitle;
+//	title = newTitle;
+	title.setText(newTitle);
 }
